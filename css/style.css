@@ -2,19 +2,123 @@
 
 :root {
     /* Professional Automotive Color Scheme - Inspired by Bosch */
-    --primary: #E31E24;        /* Bosch Red - Professional automotive red */
-    --primary-dark: #B71C1C;   /* Darker red for hover states */
-    --secondary: #1A1A1A;      /* Professional dark gray */
-    --accent: #FFB800;         /* Warning/accent yellow */
-    --light: #F5F5F5;          /* Clean light background */
-    --dark: #212121;           /* Text dark */
-    --gray: #757575;           /* Secondary text */
-    --border: #E0E0E0;         /* Subtle borders */
+    --primary: #E31E24;
+    /* Bosch Red - Professional automotive red */
+    --primary-dark: #B71C1C;
+    /* Darker red for hover states */
+    --secondary: #1A1A1A;
+    /* Professional dark gray */
+    --accent: #FFB800;
+    /* Warning/accent yellow */
+    --light: #F5F5F5;
+    /* Clean light background */
+    --dark: #212121;
+    /* Text dark */
+    --gray: #757575;
+    /* Secondary text */
+    --border: #E0E0E0;
+    /* Subtle borders */
     --white: #FFFFFF;
-    
+
     /* Typography */
     --font-primary: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-secondary: 'Open Sans', sans-serif;
+}
+
+/* Dark Mode Overrides - Premium Aesthetic */
+body.dark-mode {
+    --white: #0c0c0e;
+    /* Deep obsidian */
+    --light: #16161a;
+    /* Elevated surface */
+    --dark: #ffffff;
+    /* Primary text */
+    --secondary: #000000;
+    --gray: #94a3b8;
+    /* Slate gray text */
+    --border: rgba(255, 255, 255, 0.08);
+    /* Minimalist borders */
+    --glass: rgba(255, 255, 255, 0.03);
+    --accent-glow: rgba(227, 30, 36, 0.15);
+}
+
+body.dark-mode {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(12, 12, 14, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--light) !important;
+}
+
+body.dark-mode .text-secondary {
+    color: var(--gray) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff;
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+body.dark-mode .service-item,
+body.dark-mode .team-item,
+body.dark-mode .testimonial-text,
+body.dark-mode .card,
+body.dark-mode .bg-white,
+body.dark-mode #calcForm {
+    background: var(--glass) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .service-item:hover {
+    box-shadow: 0 0 30px var(--accent-glow);
+    border-color: var(--primary) !important;
+    background: rgba(227, 30, 36, 0.02) !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #16161a;
+    border-color: var(--border);
+    color: #ffffff;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #1c1c21;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(227, 30, 36, 0.25);
+}
+
+body.dark-mode .footer {
+    background-color: #08080a !important;
+    border-top: 1px solid var(--border);
+}
+
+body.dark-mode .btn-outline-secondary {
+    border-color: var(--border);
+    color: #ffffff;
 }
 
 /* Global Styles */
@@ -32,7 +136,12 @@ body {
     background-color: var(--white);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-primary);
     font-weight: 700;
     line-height: 1.2;
@@ -247,8 +356,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Booking Section - Professional Form */
 .booking {
-    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), 
-                url(../img/carousel-bg-2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
+        url(../img/carousel-bg-2.jpg) center center no-repeat;
     background-size: cover;
     padding: 60px 0;
 }
@@ -338,7 +447,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
-.footer p, .footer a {
+.footer p,
+.footer a {
     font-size: 14px;
     color: #CCCCCC;
 }
@@ -432,11 +542,11 @@ h1, h2, h3, h4, h5, h6 {
         padding: 12px 0;
         margin: 0;
     }
-    
+
     .navbar-light .navbar-nav .nav-link.active::after {
         display: none;
     }
-    
+
     .carousel-caption h1 {
         font-size: 32px;
     }
@@ -446,7 +556,7 @@ h1, h2, h3, h4, h5, h6 {
     .carousel-caption h1 {
         font-size: 28px;
     }
-    
+
     .carousel-caption p {
         font-size: 16px;
     }
@@ -467,6 +577,7 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 0;
         transform: translate3d(0, 40px, 0);
     }
+
     to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -475,4 +586,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .fadeInUp {
     animation-name: fadeInUp;
+}
+
+/* Skeleton Loading */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background-color: #eee;
+    background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+body.dark-mode .skeleton {
+    background-color: #333;
+    background-image: linear-gradient(90deg, #333, #444, #333);
 }

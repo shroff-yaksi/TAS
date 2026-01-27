@@ -3,26 +3,83 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Our Services - The Auto Shoppers</title>
+    <title>Services - The Auto Shoppers</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="car diagnostics, engine repair, brake service, oil change, surat car service" name="keywords">
+    <meta
+        content="Professional automotive services in Surat. From diagnostics to complex engine repairs, we handle everything with precision."
+        name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;" role="status"></div>
+        <div class="spinner-border text-danger" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div>
+    <!-- Spinner End -->
 
-    <!-- Navbar -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark text-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-map-marker-alt text-danger me-2"></small>
+                    <small>Adajan, Surat, Gujarat</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <small class="far fa-clock text-danger me-2"></small>
+                    <small>Mon - Sat : 09.30 AM - 07.30 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-danger me-2"></small>
+                    <small>+91 99789 65551</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                        href="https://www.instagram.com/theautoshoppers.in/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                        href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="https://wa.me/919978965551" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-danger"><i class="fa fa-car me-3"></i>The Auto Shoppers</h2>
@@ -35,33 +92,43 @@
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link active">Services</a>
+                <a href="offers.html" class="nav-item nav-link">Offers</a>
+                <a href="calculator.html" class="nav-item nav-link">Calculator</a>
                 <a href="team.html" class="nav-item nav-link">Team</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="d-none d-lg-flex align-items-center me-4">
+                <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
+                    style="width: 40px; height: 40px; padding: 0;">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
             <a href="booking.html" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block">Book Service<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
+    <!-- Navbar End -->
 
-    <!-- Page Header -->
+    <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-2.jpg);">
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Our Services</h1>
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center text-uppercase">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item text-white active">Services</li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Services</li>
                     </ol>
                 </nav>
             </div>
         </div>
     </div>
+    <!-- Page Header End -->
 
-    <!-- Services -->
+    <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center wow fadeInUp">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-danger text-uppercase">Our Services</h6>
                 <h1 class="mb-5">Complete Auto Care Solutions</h1>
             </div>
@@ -70,17 +137,16 @@
                     <div class="service-item d-flex flex-column bg-light p-4 h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
-                                <i class="fa fa-oil-can text-white"></i>
+                                <i class="fa fa-microchip text-white"></i>
                             </div>
-                            <h5 class="mb-0">General Service</h5>
+                            <h5 class="mb-0">Diagnostic Test</h5>
                         </div>
-                        <p>Complete vehicle inspection and maintenance including oil change, filter replacement, and
-                            brake check.</p>
+                        <p>Advanced health checkup using specialized EFI tools to pinpoint electronic and performance
+                            issues.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>Engine Oil Change</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Air & Oil Filter</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Brake Inspection</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Battery Check</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Computer Diagnostics</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Sensor Calibration</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Error Code Reset</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -89,17 +155,15 @@
                     <div class="service-item d-flex flex-column bg-light p-4 h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
-                                <i class="fa fa-cog text-white"></i>
+                                <i class="fa fa-cogs text-white"></i>
                             </div>
-                            <h5 class="mb-0">Engine Service</h5>
+                            <h5 class="mb-0">Engine Servicing</h5>
                         </div>
-                        <p>Advanced engine diagnostics and repair using state-of-the-art equipment and genuine parts.
-                        </p>
+                        <p>Complete engine tune-up to ensure optimal performance, fuel efficiency, and longevity.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>Computer Diagnostics</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Engine Tuning</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Timing Belt</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Spark Plugs</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Valve Adjustment</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Timing Check</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Cooling System</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -108,16 +172,16 @@
                     <div class="service-item d-flex flex-column bg-light p-4 h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
-                                <i class="fa fa-circle-notch text-white"></i>
+                                <i class="fa fa-car-side text-white"></i>
                             </div>
-                            <h5 class="mb-0">Tyre Service</h5>
+                            <h5 class="mb-0">Brake Repair</h5>
                         </div>
-                        <p>Complete tyre solutions including replacement, rotation, balancing, and wheel alignment.</p>
+                        <p>Ensure your safety with expert brake pad replacement, disc resurfacing, and caliper
+                            servicing.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>Tyre Replacement</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Wheel Alignment</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Balancing</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Puncture Repair</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Pad & Shoe Change</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Brake Fluid Flush</li>
+                            <li><i class="fa fa-check text-success me-2"></i>ABS Service</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -126,16 +190,15 @@
                     <div class="service-item d-flex flex-column bg-light p-4 h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
-                                <i class="fa fa-snowflake text-white"></i>
+                                <i class="fa fa-oil-can text-white"></i>
                             </div>
-                            <h5 class="mb-0">AC Service</h5>
+                            <h5 class="mb-0">Oil Changing</h5>
                         </div>
-                        <p>Air conditioning service and repair to keep you cool during hot summer days.</p>
+                        <p>Premium grade oil and filter changes to keep your engine's heart beating smoothly.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>AC Gas Refill</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Compressor Repair</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Cooling Check</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Filter Cleaning</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Synthetic Oil</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Genuine Filters</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Drain Bolt Washer</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -146,14 +209,14 @@
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
                                 <i class="fa fa-car-crash text-white"></i>
                             </div>
-                            <h5 class="mb-0">Brake Service</h5>
+                            <h5 class="mb-0">Dent & Paint</h5>
                         </div>
-                        <p>Complete brake system inspection and repair for your safety on the road.</p>
+                        <p>Restore your vehicle's aesthetic beauty with precision dent removal and factory-finish
+                            painting.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>Brake Pad Replacement</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Disc Resurfacing</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Fluid Check</li>
-                            <li><i class="fa fa-check text-success me-2"></i>ABS Diagnostics</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Custom Color Matching</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Panel Beating</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Polishing</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -162,16 +225,15 @@
                     <div class="service-item d-flex flex-column bg-light p-4 h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
-                                <i class="fa fa-battery-full text-white"></i>
+                                <i class="fa fa-snowflake text-white"></i>
                             </div>
-                            <h5 class="mb-0">Battery Service</h5>
+                            <h5 class="mb-0">A/C Service</h5>
                         </div>
-                        <p>Battery testing, charging, and replacement services to keep your car running.</p>
+                        <p>Stay cool with advanced gas recharge, compressor repairs, and thorough filter cleaning.</p>
                         <ul class="list-unstyled mb-4">
-                            <li><i class="fa fa-check text-success me-2"></i>Battery Testing</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Replacement</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Charging</li>
-                            <li><i class="fa fa-check text-success me-2"></i>Terminal Cleaning</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Gas Refill</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Leak Detection</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Duct Cleaning</li>
                         </ul>
                         <a class="btn btn-danger mt-auto" href="booking.html">Book Now</a>
                     </div>
@@ -179,39 +241,54 @@
             </div>
         </div>
     </div>
+    <!-- Service End -->
 
-    <!-- Footer -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn">
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Mumbai, India</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 98765 43210</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Adajan, Surat, Gujarat</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99789 65551</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@theautoshoppers.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/theautoshoppers.in/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/919978965551" target="_blank"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Opening Hours</h4>
                     <h6 class="text-light">Monday - Saturday:</h6>
-                    <p class="mb-4">09.00 AM - 07.00 PM</p>
+                    <p class="mb-4">09.30 AM - 07.30 PM</p>
                     <h6 class="text-light">Sunday:</h6>
                     <p class="mb-0">Closed</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">General Service</a>
-                    <a class="btn btn-link" href="">Engine Repair</a>
-                    <a class="btn btn-link" href="">Tyre Service</a>
-                    <a class="btn btn-link" href="">AC Service</a>
+                    <a class="btn btn-link" href="service.html">Diagnostic Test</a>
+                    <a class="btn btn-link" href="service.html">Engine Repair</a>
+                    <a class="btn btn-link" href="service.html">Brake Service</a>
+                    <a class="btn btn-link" href="service.html">Oil Change</a>
+                    <a class="btn btn-link" href="service.html">A/C Service</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Subscribe for updates and offers.</p>
+                    <p>Subscribe for exclusive updates and seasonal offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <form id="newsletterForm">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </form>
                     </div>
+                    <div id="newsletterMessage" class="mt-2" style="font-size: 14px;"></div>
                 </div>
             </div>
         </div>
@@ -228,14 +305,88 @@
             </div>
         </div>
     </div>
+    <!-- Footer End -->
 
+    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919978965551" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            color: #fff;
+        }
+    </style>
+
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- AJAX Handlers -->
+    <script>
+        $(document).ready(function () {
+            $('#newsletterForm').on('submit', function (e) {
+                e.preventDefault();
+                const email = $(this).find('input').val();
+                const btn = $(this).find('button');
+                btn.prop('disabled', true).text('...');
+
+                $.ajax({
+                    url: 'php/newsletter.php',
+                    type: 'POST',
+                    data: { email: email },
+                    success: function (res) {
+                        if (res.success) {
+                            $('#newsletterMessage').html('<span class="text-success">' + res.message + '</span>');
+                            $('#newsletterForm')[0].reset();
+                        } else {
+                            $('#newsletterMessage').html('<span class="text-warning">' + res.message + '</span>');
+                        }
+                    },
+                    error: function () {
+                        $('#newsletterMessage').html('<span class="text-danger">Connection error.</span>');
+                    },
+                    complete: function () {
+                        btn.prop('disabled', false).text('SignUp');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -3,10 +3,15 @@
  * Utility Functions
  */
 
+require_once 'db.php';
+
 /**
  * Sanitize user input
  */
 function sanitizeInput($data) {
+    if (is_array($data)) {
+        return array_map('sanitizeInput', $data);
+    }
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
@@ -14,130 +19,62 @@ function sanitizeInput($data) {
 }
 
 /**
- * Generate unique booking ID
+ * Generate unique IDs
  */
 function generateBookingId() {
     return 'TAS' . date('Ymd') . strtoupper(substr(uniqid(), -6));
 }
 
-/**
- * Generate unique contact ID
- */
 function generateContactId() {
     return 'CNT' . date('Ymd') . strtoupper(substr(uniqid(), -6));
 }
 
 /**
- * Send booking confirmation email
+ * CSRF Protection
  */
-function sendBookingConfirmation($data) {
-    $to = $data['personalInfo']['email'];
-    $subject = 'Booking Confirmation - The Auto Shoppers';
-    
-    $message = "
-    <html>
-    <head>
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #E31E24; color: white; padding: 20px; text-align: center; }
-            .content { background-color: #f9f9f9; padding: 20px; }
-            .booking-details { background-color: white; padding: 15px; margin: 10px 0; border-left: 4px solid #E31E24; }
-            .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <h1>The Auto Shoppers</h1>
-                <p>Booking Confirmation</p>
-            </div>
-            <div class='content'>
-                <h2>Dear {$data['personalInfo']['name']},</h2>
-                <p>Thank you for booking with The Auto Shoppers! Your service appointment has been confirmed.</p>
-                
-                <div class='booking-details'>
-                    <h3>Booking Details</h3>
-                    <p><strong>Booking ID:</strong> {$data['bookingId']}</p>
-                    <p><strong>Service Type:</strong> {$data['serviceDetails']['type']}</p>
-                    <p><strong>Date:</strong> {$data['serviceDetails']['date']}</p>
-                    <p><strong>Time:</strong> {$data['serviceDetails']['time']}</p>
-                </div>
-                
-                <div class='booking-details'>
-                    <h3>Vehicle Information</h3>
-                    <p><strong>Vehicle:</strong> {$data['vehicleInfo']['year']} {$data['vehicleInfo']['make']} {$data['vehicleInfo']['model']}</p>
-                    <p><strong>Registration:</strong> {$data['vehicleInfo']['registrationNumber']}</p>
-                </div>
-                
-                <p>Our team will contact you shortly to confirm the appointment. If you need to make any changes, please call us at +91 98765 43210.</p>
-                
-                <p>We look forward to serving you!</p>
-            </div>
-            <div class='footer'>
-                <p>The Auto Shoppers | 123 Street, Mumbai, India</p>
-                <p>Phone: +91 98765 43210 | Email: info@theautoshoppers.com</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    ";
-    
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">" . "\r\n";
-    
-    // Send email (may not work on localhost without mail server)
-    $emailSent = @mail($to, $subject, $message, $headers);
-    
-    // Also send notification to admin
-    @mail(ADMIN_EMAIL, 'New Booking - ' . $data['bookingId'], $message, $headers);
-    
-    return $emailSent;
+function getCsrfToken() {
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+function verifyCsrfToken($token) {
+    if (!isset($_SESSION['csrf_token']) || empty($token)) {
+        return false;
+    }
+    return hash_equals($_SESSION['csrf_token'], $token);
 }
 
 /**
- * Send contact form email
+ * Rate Limiting
  */
-function sendContactEmail($data) {
-    $to = ADMIN_EMAIL;
-    $subject = 'New Contact Form Submission - The Auto Shoppers';
-    
-    $message = "
-    <html>
-    <head>
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #E31E24; color: white; padding: 20px; }
-            .content { background-color: #f9f9f9; padding: 20px; }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <h2>New Contact Form Submission</h2>
-            </div>
-            <div class='content'>
-                <p><strong>Name:</strong> {$data['name']}</p>
-                <p><strong>Email:</strong> {$data['email']}</p>
-                <p><strong>Phone:</strong> {$data['phone']}</p>
-                <p><strong>Subject:</strong> {$data['subject']}</p>
-                <p><strong>Message:</strong></p>
-                <p>{$data['message']}</p>
-                <p><strong>Submitted:</strong> {$data['timestamp']}</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    ";
-    
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">" . "\r\n";
-    $headers .= "Reply-To: {$data['email']}" . "\r\n";
-    
-    return @mail($to, $subject, $message, $headers);
+function isRateLimited($action, $limit = 5, $period = 3600) {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
+    $db = Database::getInstance();
+    $now = time();
+    $cutoff = $now - $period;
+
+    // Clean up old records
+    $db->prepare("DELETE FROM rate_limits WHERE last_request < ?")->execute([$cutoff]);
+
+    // Check current IP
+    $stmt = $db->prepare("SELECT request_count, last_request FROM rate_limits WHERE ip = ? AND action = ?");
+    $stmt->execute([$ip, $action]);
+    $row = $stmt->fetch();
+
+    if ($row) {
+        if ($row['request_count'] >= $limit) {
+            return true;
+        }
+        $stmt = $db->prepare("UPDATE rate_limits SET request_count = request_count + 1, last_request = ? WHERE ip = ? AND action = ?");
+        $stmt->execute([$now, $ip, $action]);
+    } else {
+        $stmt = $db->prepare("INSERT INTO rate_limits (ip, action, last_request, request_count) VALUES (?, ?, ?, 1)");
+        $stmt->execute([$ip, $action, $now]);
+    }
+
+    return false;
 }
 
 /**
@@ -148,16 +85,69 @@ function isValidEmail($email) {
 }
 
 /**
- * Check if email already exists in newsletter
+ * Database Helpers
  */
 function emailExistsInNewsletter($email) {
-    $subscribers = json_decode(file_get_contents(NEWSLETTER_FILE), true) ?? [];
-    foreach ($subscribers as $subscriber) {
-        if ($subscriber['email'] === $email) {
-            return true;
-        }
-    }
-    return false;
+    $db = Database::getInstance();
+    $stmt = $db->prepare("SELECT id FROM newsletter WHERE email = ?");
+    $stmt->execute([$email]);
+    return $stmt->fetch() !== false;
 }
 
-?>
+function subscribeToNewsletter($email) {
+    if (emailExistsInNewsletter($email)) return true;
+    $db = Database::getInstance();
+    $stmt = $db->prepare("INSERT INTO newsletter (email) VALUES (?)");
+    return $stmt->execute([$email]);
+}
+
+/**
+ * Email Sending Helpers
+ */
+function sendEmail($to, $subject, $body, $replyTo = null) {
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">" . "\r\n";
+    if ($replyTo) {
+        $headers .= "Reply-To: $replyTo" . "\r\n";
+    }
+    
+    return @mail($to, $subject, $body, $headers);
+}
+
+function getEmailTemplate($title, $content) {
+    return "
+    <html>
+    <head>
+        <style>
+            body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+            .container { max-width: 600px; margin: 20px auto; border: 1px solid #eee; }
+            .header { background-color: #E31E24; color: white; padding: 30px; text-align: center; }
+            .header h1 { margin: 0; font-size: 24px; }
+            .content { padding: 30px; background-color: #ffffff; }
+            .footer { background-color: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 12px; border-top: 1px solid #eee; }
+            .details-box { background-color: #f1f3f5; border-left: 4px solid #E31E24; padding: 15px; margin: 20px 0; }
+            .detail-row { margin-bottom: 5px; }
+            .detail-label { font-weight: bold; color: #495057; width: 120px; display: inline-block; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>The Auto Shoppers</h1>
+                <div>$title</div>
+            </div>
+            <div class='content'>
+                $content
+            </div>
+            <div class='footer'>
+                <p><strong>The Auto Shoppers</strong><br>
+                F.P. 134, Beside Western city, Opp. L.P.Savani CNG Pump, Adajan, Surat, Gujarat 395009</p>
+                <p>Phone: +91 99789 65551 | Email: info@theautoshoppers.com</p>
+                <p>&copy; " . date('Y') . " The Auto Shoppers. All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+}

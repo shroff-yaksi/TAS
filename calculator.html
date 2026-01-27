@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Service Calculator - The Auto Shoppers</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-danger"><i class="fa fa-car me-3"></i>The Auto Shoppers</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="offers.html" class="nav-item nav-link">Offers</a>
+                <a href="calculator.html" class="nav-item nav-link active">Calculator</a>
+                <a href="team.html" class="nav-item nav-link">Team</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="d-none d-lg-flex align-items-center me-4">
+                <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
+                    style="width: 40px; height: 40px; padding: 0;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <a href="booking.html" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block">Book Service<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.jpg);">
+        <div class="container-fluid page-header-inner py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Service Calculator</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Calculator</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Calculator Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-danger text-uppercase">// Price Estimator //</h6>
+                    <h1 class="mb-4">Get an Instant Estimate</h1>
+                    <p class="mb-4">Select your vehicle type and the services you need to get a rough estimate of the
+                        costs. Final prices may vary based on vehicle condition and specific spare parts required.</p>
+
+                    <div class="bg-light p-4 rounded">
+                        <form id="calcForm">
+                            <div class="mb-3">
+                                <label class="form-label font-weight-bold">Vehicle Segment</label>
+                                <select class="form-select" id="carSegment" required>
+                                    <option value="1.0">Hatchback (Small)</option>
+                                    <option value="1.2">Sedan / Compact SUV</option>
+                                    <option value="1.5">SUV / Premium Sedan</option>
+                                    <option value="2.0">Luxury / Performance</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label font-weight-bold">Select Services</label>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="2500" id="s1">
+                                    <label class="form-check-label" for="s1">General Service (Oil & Filters)</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="1500" id="s2">
+                                    <label class="form-check-label" for="s2">Wheel Alignment & Balancing</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="1200" id="s3">
+                                    <label class="form-check-label" for="s3">Brake Cleaning & Adjustment</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="2000" id="s4">
+                                    <label class="form-check-label" for="s4">AC Gas Refill & Cleaning</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="800" id="s5">
+                                    <label class="form-check-label" for="s5">Full Interior Vacuuming</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-danger text-white p-5 rounded h-100 d-flex flex-column justify-content-center text-center wow zoomIn"
+                        data-wow-delay="0.5s">
+                        <h2 class="text-white mb-4">Estimated Total</h2>
+                        <h1 class="display-1 mb-4">₹<span id="totalPrice">0</span></h1>
+                        <p class="mb-4">*This is an indicative labor + basic parts cost price. Taxes and additional part
+                            costs are extra.</p>
+                        <a href="booking.html" class="btn btn-secondary py-3 px-5">Book This Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Calculator End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
+        <div class="container py-5 text-center">
+            <p>&copy; <a class="border-bottom" href="#">The Auto Shoppers</a>, All Right Reserved. Designed By Yaksi
+                Shroff</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            function calculate() {
+                let baseMultiplier = parseFloat($('#carSegment').val());
+                let total = 0;
+                $('.service-check:checked').each(function () {
+                    total += parseFloat($(this).val());
+                });
+                let estimatedTotal = Math.round(total * baseMultiplier);
+                $('#totalPrice').text(estimatedTotal.toLocaleString('en-IN'));
+            }
+
+            $('#carSegment, .service-check').on('change', calculate);
+        });
+    </script>
+</body>
+
+</html>

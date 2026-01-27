@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <title>Book Service - The Auto Shoppers</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="car service booking, auto repair appointment" name="keywords">
-    <meta content="Book your car service appointment online with The Auto Shoppers" name="description">
+    <meta content="car service booking, auto repair appointment, surat car repair" name="keywords">
+    <meta
+        content="Schedule your car service appointment online at The Auto Shoppers. Convenient, reliable, and expert care for your vehicle."
+        name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -50,26 +52,27 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <small class="fa fa-map-marker-alt text-danger me-2"></small>
-                    <small>123 Street, Mumbai, India</small>
+                    <small>Adajan, Surat, Gujarat</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <small class="far fa-clock text-danger me-2"></small>
-                    <small>Mon - Sat : 09.00 AM - 07.00 PM</small>
+                    <small>Mon - Sat : 09.30 AM - 07.30 PM</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <small class="fa fa-phone-alt text-danger me-2"></small>
-                    <small>+91 98765 43210</small>
+                    <small>+91 99789 65551</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                        href="https://www.instagram.com/theautoshoppers.in/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
+                        href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="https://wa.me/919978965551" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -89,10 +92,18 @@
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="offers.html" class="nav-item nav-link">Offers</a>
+                <a href="calculator.html" class="nav-item nav-link">Calculator</a>
                 <a href="team.html" class="nav-item nav-link">Team</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="booking.html" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block">Book Service<i
+            <div class="d-none d-lg-flex align-items-center me-4">
+                <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
+                    style="width: 40px; height: 40px; padding: 0;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <a href="booking.html" class="btn btn-danger py-4 px-lg-5 d-none d-lg-block active">Book Service<i
                     class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
@@ -102,7 +113,7 @@
     <div class="container-fluid page-header mb-5 p-0" style="background-image: url(img/carousel-bg-1.jpg);">
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Book Service</h1>
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Booking</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center text-uppercase">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -117,219 +128,101 @@
     <!-- Booking Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-danger text-uppercase">Book Now</h6>
-                <h1 class="mb-5">Schedule Your Service Appointment</h1>
-            </div>
             <div class="row g-5">
-                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.3s">
-                    <form id="bookingForm" action="php/booking.php" method="POST">
-                        <div class="row g-3">
-                            <!-- Personal Information -->
-                            <div class="col-12">
-                                <h5 class="text-danger mb-3">Personal Information</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Your Name" required>
-                                    <label for="name">Your Name</label>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-danger text-uppercase">Book Now</h6>
+                    <h1 class="mb-4">Standardized Multi-Brand Car Service</h1>
+                    <p class="mb-4">Experience hassle-free booking and expert care. We use genuine parts and advanced
+                        diagnostics to keep your vehicle in top condition.</p>
+                    <div class="row g-4 pb-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center"
+                                    style="width: 45px; height: 45px;">
+                                    <i class="fa fa-certificate text-danger"></i>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Your Email" required>
-                                    <label for="email">Your Email</label>
+                                <div class="ps-3">
+                                    <h6>Certified Experts</h6>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="tel" class="form-control" id="phone" name="phone"
-                                        placeholder="Phone Number" required>
-                                    <label for="phone">Phone Number</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="address" name="address"
-                                        placeholder="Address">
-                                    <label for="address">Address</label>
-                                </div>
-                            </div>
-
-                            <!-- Vehicle Information -->
-                            <div class="col-12 mt-4">
-                                <h5 class="text-danger mb-3">Vehicle Information</h5>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-floating">
-                                    <select class="form-select" id="carMake" name="carMake" required>
-                                        <option value="">Select Make</option>
-                                        <option value="Maruti Suzuki">Maruti Suzuki</option>
-                                        <option value="Hyundai">Hyundai</option>
-                                        <option value="Tata">Tata</option>
-                                        <option value="Mahindra">Mahindra</option>
-                                        <option value="Honda">Honda</option>
-                                        <option value="Toyota">Toyota</option>
-                                        <option value="Ford">Ford</option>
-                                        <option value="Volkswagen">Volkswagen</option>
-                                        <option value="Renault">Renault</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                    <label for="carMake">Car Make</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="carModel" name="carModel"
-                                        placeholder="Car Model" required>
-                                    <label for="carModel">Car Model</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="carYear" name="carYear"
-                                        placeholder="Year" min="1990" max="2025" required>
-                                    <label for="carYear">Year</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="registrationNumber"
-                                        name="registrationNumber" placeholder="Registration Number" required>
-                                    <label for="registrationNumber">Registration Number</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="number" class="form-control" id="mileage" name="mileage"
-                                        placeholder="Current Mileage (km)">
-                                    <label for="mileage">Current Mileage (km)</label>
-                                </div>
-                            </div>
-
-                            <!-- Service Details -->
-                            <div class="col-12 mt-4">
-                                <h5 class="text-danger mb-3">Service Details</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select" id="serviceType" name="serviceType" required>
-                                        <option value="">Select Service</option>
-                                        <option value="General Service">General Service</option>
-                                        <option value="Engine Service">Engine Service</option>
-                                        <option value="Tyre Service">Tyre Service</option>
-                                        <option value="AC Service">AC Service</option>
-                                        <option value="Brake Service">Brake Service</option>
-                                        <option value="Battery Service">Battery Service</option>
-                                        <option value="Wheel Alignment">Wheel Alignment</option>
-                                        <option value="Oil Change">Oil Change</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                    <label for="serviceType">Service Type</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="date" class="form-control" id="serviceDate" name="serviceDate"
-                                        placeholder="Preferred Date" required>
-                                    <label for="serviceDate">Preferred Date</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating time" id="time3" data-target-input="nearest">
-                                    <input type="time" class="form-control" id="serviceTime" name="serviceTime"
-                                        placeholder="Preferred Time" required>
-                                    <label for="serviceTime">Preferred Time</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select" id="urgency" name="urgency">
-                                        <option value="Normal">Normal</option>
-                                        <option value="Urgent">Urgent</option>
-                                        <option value="Emergency">Emergency</option>
-                                    </select>
-                                    <label for="urgency">Urgency</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Special Request" id="message"
-                                        name="message" style="height: 100px"></textarea>
-                                    <label for="message">Describe the Issue / Special Request</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-danger w-100 py-3" type="submit">
-                                    <i class="fa fa-check me-2"></i>Book Appointment
-                                </button>
                             </div>
                         </div>
-                    </form>
-                    <div id="bookingMessage" class="mt-3"></div>
-                </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-light rounded p-5">
-                        <h5 class="text-danger mb-4">Why Book With Us?</h5>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-white"
-                                style="width: 50px; height: 50px;">
-                                <i class="fa fa-clock text-danger"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="text-dark mb-0">Flexible Timing</h6>
-                                <small>Choose your convenient time slot</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-white"
-                                style="width: 50px; height: 50px;">
-                                <i class="fa fa-user-tie text-danger"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="text-dark mb-0">Expert Technicians</h6>
-                                <small>Certified and experienced mechanics</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-white"
-                                style="width: 50px; height: 50px;">
-                                <i class="fa fa-tools text-danger"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="text-dark mb-0">Quality Parts</h6>
-                                <small>Genuine and certified spare parts</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-white"
-                                style="width: 50px; height: 50px;">
-                                <i class="fa fa-shield-alt text-danger"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="text-dark mb-0">Warranty</h6>
-                                <small>Service warranty on all repairs</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-white"
-                                style="width: 50px; height: 50px;">
-                                <i class="fa fa-rupee-sign text-danger"></i>
-                            </div>
-                            <div class="ms-3">
-                                <h6 class="text-dark mb-0">Transparent Pricing</h6>
-                                <small>No hidden charges</small>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center"
+                                    style="width: 45px; height: 45px;">
+                                    <i class="fa fa-tools text-danger"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Modern Tools</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-danger rounded p-5 mt-4">
-                        <h5 class="text-white mb-4">Need Help?</h5>
-                        <p class="text-white mb-2"><i class="fa fa-phone-alt me-3"></i>+91 98765 43210</p>
-                        <p class="text-white mb-2"><i class="fa fa-envelope me-3"></i>info@theautoshoppers.com</p>
-                        <p class="text-white mb-0"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Mumbai, India
-                        </p>
+                    <div class="bg-danger p-4 rounded wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="text-white mb-3">Need Emergency Help?</h5>
+                        <p class="text-white mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99789 65551</p>
+                        <p class="text-white mb-0">Available Mon-Sat: 09:30 AM - 07:30 PM</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-light h-100 d-flex flex-column justify-content-center p-5 wow zoomIn"
+                        data-wow-delay="0.4s">
+                        <h2 class="text-dark mb-4 text-center">Schedule Service</h2>
+                        <form id="bookingForm">
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="name" class="form-control border-0" placeholder="Your Name"
+                                        style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" name="email" class="form-control border-0"
+                                        placeholder="Your Email" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="tel" name="phone" class="form-control border-0"
+                                        placeholder="Phone Number" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select name="serviceType" class="form-select border-0" style="height: 55px;"
+                                        required>
+                                        <option value="" selected disabled>Select A Service</option>
+                                        <option value="Diagnostic Test">Diagnostic Test</option>
+                                        <option value="Engine Service">Engine Service</option>
+                                        <option value="Brake Repair">Brake Repair</option>
+                                        <option value="Oil Changing">Oil Changing</option>
+                                        <option value="A/C Service">A/C Service</option>
+                                        <option value="Wheel Alignment">Wheel Alignment</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="carMake" class="form-control border-0"
+                                        placeholder="Car Make (e.g. Maruti)" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" name="carModel" class="form-control border-0"
+                                        placeholder="Car Model" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="date" name="serviceDate" class="form-control border-0"
+                                            placeholder="Service Date" style="height: 55px;" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="time" name="serviceTime" class="form-control border-0"
+                                        placeholder="Service Time" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control border-0"
+                                        placeholder="Special Request / Issue" style="height: 100px;"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-danger w-100 py-3" type="submit" id="bookingSubmitBtn">Book
+                                        Appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="bookingMessageBox" class="mt-3"></div>
                     </div>
                 </div>
             </div>
@@ -343,39 +236,46 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Mumbai, India</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 98765 43210</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Adajan, Surat, Gujarat</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99789 65551</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@theautoshoppers.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/theautoshoppers.in/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/919978965551" target="_blank"><i
+                                class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Opening Hours</h4>
                     <h6 class="text-light">Monday - Saturday:</h6>
-                    <p class="mb-4">09.00 AM - 07.00 PM</p>
+                    <p class="mb-4">09.30 AM - 07.30 PM</p>
                     <h6 class="text-light">Sunday:</h6>
                     <p class="mb-0">Closed</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="service.html">General Service</a>
+                    <a class="btn btn-link" href="service.html">Diagnostic Test</a>
                     <a class="btn btn-link" href="service.html">Engine Repair</a>
-                    <a class="btn btn-link" href="service.html">Tyre Service</a>
-                    <a class="btn btn-link" href="service.html">AC Service</a>
                     <a class="btn btn-link" href="service.html">Brake Service</a>
+                    <a class="btn btn-link" href="service.html">Oil Change</a>
+                    <a class="btn btn-link" href="service.html">A/C Service</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Subscribe to get updates on special offers and service tips.</p>
+                    <p>Subscribe for exclusive updates and seasonal offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <form id="newsletterForm">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </form>
                     </div>
+                    <div id="newsletterMessage" class="mt-2" style="font-size: 14px;"></div>
                 </div>
             </div>
         </div>
@@ -397,6 +297,37 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919978965551" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <style>
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            color: #fff;
+        }
+    </style>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -412,27 +343,60 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- Booking Form Handler -->
+    <!-- AJAX Handlers -->
     <script>
         $(document).ready(function () {
+            // Booking Form
             $('#bookingForm').on('submit', function (e) {
                 e.preventDefault();
+                const btn = $('#bookingSubmitBtn');
+                btn.prop('disabled', true).text('Booking...');
 
                 $.ajax({
-                    type: 'POST',
                     url: 'php/booking.php',
+                    type: 'POST',
                     data: $(this).serialize(),
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response.success) {
-                            $('#bookingMessage').html('<div class="alert alert-success">' + response.message + '</div>');
+                    success: function (res) {
+                        if (res.success) {
+                            $('#bookingMessageBox').html('<div class="alert alert-success">' + res.message + '</div>');
                             $('#bookingForm')[0].reset();
                         } else {
-                            $('#bookingMessage').html('<div class="alert alert-danger">' + response.message + '</div>');
+                            $('#bookingMessageBox').html('<div class="alert alert-danger">' + res.message + '</div>');
                         }
                     },
                     error: function () {
-                        $('#bookingMessage').html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+                        $('#bookingMessageBox').html('<div class="alert alert-danger">Connection error. Please try again.</div>');
+                    },
+                    complete: function () {
+                        btn.prop('disabled', false).text('Book Appointment');
+                    }
+                });
+            });
+
+            // Newsletter
+            $('#newsletterForm').on('submit', function (e) {
+                e.preventDefault();
+                const email = $(this).find('input').val();
+                const btn = $(this).find('button');
+                btn.prop('disabled', true).text('...');
+
+                $.ajax({
+                    url: 'php/newsletter.php',
+                    type: 'POST',
+                    data: { email: email },
+                    success: function (res) {
+                        if (res.success) {
+                            $('#newsletterMessage').html('<span class="text-success">' + res.message + '</span>');
+                            $('#newsletterForm')[0].reset();
+                        } else {
+                            $('#newsletterMessage').html('<span class="text-warning">' + res.message + '</span>');
+                        }
+                    },
+                    error: function () {
+                        $('#newsletterMessage').html('<span class="text-danger">Connection error.</span>');
+                    },
+                    complete: function () {
+                        btn.prop('disabled', false).text('SignUp');
                     }
                 });
             });
