@@ -1,52 +1,63 @@
-# TAS — The Auto Shoppers
+<div align="center">
 
-> **Type:** Business Website · **Stack:** HTML, CSS, JavaScript, PHP · **Status:** Live / Active Development
+# 🚗 The Auto Shoppers
 
-TAS is the official website for **The Auto Shoppers**, a car servicing and detailing business. It includes a service calculator, contact form with email, a booking flow, and an admin panel — all built as a static PHP-powered site with a premium dark-mode UI.
+**Premium car servicing & detailing — online, done right.**
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+
+</div>
 
 ---
 
-## Pages
+## ✨ Overview
+
+TAS is the official website for **The Auto Shoppers**, a car servicing and detailing business. It features a real-time service price calculator, a contact form backed by PHPMailer SMTP, dark mode by default, and a password-protected admin panel — all built as a clean, responsive PHP site with a premium aesthetic.
+
+---
+
+## 🖥️ Pages
 
 | Page | Description |
 |------|-------------|
-| `index.html` | Homepage — hero, promotions, services overview, app teaser |
-| `service.html` | Full service catalogue |
-| `calculator.html` | Interactive price estimator (8 services, ₹500 minimum) |
-| `offers.html` | Current promotions and deals |
-| `about.html` | Company story and team |
-| `team.html` | Team profiles |
-| `contact.html` | Contact form (PHP + PHPMailer SMTP) |
-| `admin/` | Password-protected admin panel |
+| **Home** | Hero section, promotions, services overview, app teaser |
+| **Services** | Full service catalogue with pricing |
+| **Calculator** | Real-time quote builder — 8 services, ₹500 minimum |
+| **Offers** | Current deals and promotions |
+| **About** | Company story |
+| **Team** | Team profiles |
+| **Contact** | Smart contact form with SMTP email |
+| **Admin** | Password-protected booking & enquiry panel |
 
 ---
 
-## Tech Stack
+## ⚙️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
+| Layer | Tech |
+|-------|------|
 | Structure | HTML5 |
-| Styling | CSS3 (custom dark mode, responsive) |
-| Interactivity | Vanilla JavaScript, jQuery |
-| Animations | WOW.js, Animate.css |
+| Styling | CSS3 — custom dark mode, mobile-first |
+| Interactivity | Vanilla JS · jQuery |
+| Animations | WOW.js · Animate.css |
 | Backend | PHP 8 |
-| Email | PHPMailer (SMTP) with `mail()` fallback |
-| Maps | Google Maps embed |
+| Email | PHPMailer SMTP (`mail()` fallback) |
 | Icons | Font Awesome |
 
 ---
 
-## Features
+## 🌙 Highlights
 
-- **Dark Mode** — default on, persisted via `localStorage`, toggle on desktop + mobile nav
-- **Service Calculator** — 8 services, real-time quote, ₹500 minimum charge
-- **Contact Form** — PHPMailer SMTP (credentials via env vars), fallback to native `mail()`
-- **Responsive** — mobile-first, hamburger nav with overflow fix
-- **Admin Panel** — booking and enquiry management
+- **Dark mode on by default** — persisted via `localStorage`, toggles on both desktop and mobile nav
+- **Live service calculator** — 8 services, real-time total, ₹500 minimum charge enforced
+- **PHPMailer SMTP** — reliable email delivery, credentials loaded from environment variables
+- **Responsive nav** — hamburger menu with mobile overflow fix
 
 ---
 
-## Running Locally
+## 🚀 Run Locally
 
 ```bash
 cd TAS
@@ -54,12 +65,11 @@ php -S localhost:8000
 # → http://localhost:8000
 ```
 
-**PHPMailer (production):**
-```bash
-composer require phpmailer/phpmailer vlucas/phpdotenv
-```
-Set env vars: `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `SMTP_PORT`
+> For email to work in production, install PHPMailer and set env vars:
+> `SMTP_HOST` · `SMTP_USER` · `SMTP_PASS` · `SMTP_PORT`
 
 ---
 
-*Business website for The Auto Shoppers — car servicing & detailing*
+<div align="center">
+<sub>Built for The Auto Shoppers · Car Servicing & Detailing</sub>
+</div>
