@@ -1,58 +1,65 @@
-# TAS - The Auto Shoppers
+# TAS — The Auto Shoppers
 
-A professional car service and repair management system built with Bootstrap 5, PHP, and SQLite.
+> **Type:** Business Website · **Stack:** HTML, CSS, JavaScript, PHP · **Status:** Live / Active Development
 
-## Features
+TAS is the official website for **The Auto Shoppers**, a car servicing and detailing business. It includes a service calculator, contact form with email, a booking flow, and an admin panel — all built as a static PHP-powered site with a premium dark-mode UI.
 
-- 🏠 **Homepage**: Modern landing page with service carousel, premium dark UI, and mobile app preview.
-- 🌓 **Premium Dark Mode**: Sophisticated dark theme with glassmorphism and neon accents, persistent via LocalStorage.
-- 🧮 **Service Calculator**: Interactive price estimation tool for customers.
-- 📅 **Smart Booking**: Online appointment scheduling with SQLite persistence.
-- 💼 **Admin Dashboard**: Full-featured management suite for bookings, messages, and subscribers.
-- 👥 **Team**: Profile showcase of expert technicians.
-- 📞 **Contact**: Integrated contact form and WhatsApp floating button.
-- 📊 **Database**: Persistent storage using SQLite 3.
+---
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Homepage — hero, promotions, services overview, app teaser |
+| `service.html` | Full service catalogue |
+| `calculator.html` | Interactive price estimator (8 services, ₹500 minimum) |
+| `offers.html` | Current promotions and deals |
+| `about.html` | Company story and team |
+| `team.html` | Team profiles |
+| `contact.html` | Contact form (PHP + PHPMailer SMTP) |
+| `admin/` | Password-protected admin panel |
+
+---
 
 ## Tech Stack
 
-- **Frontend**: HTML5, CSS3 (Custom Variables), Bootstrap 5, Glassmorphism CSS.
-- **JavaScript**: jQuery (AJAX), Owl Carousel, WOW.js, Animate.css.
-- **Backend**: PHP 8.x (Session-based Auth).
-- **Database**: SQLite 3.
+| Layer | Technology |
+|-------|-----------|
+| Structure | HTML5 |
+| Styling | CSS3 (custom dark mode, responsive) |
+| Interactivity | Vanilla JavaScript, jQuery |
+| Animations | WOW.js, Animate.css |
+| Backend | PHP 8 |
+| Email | PHPMailer (SMTP) with `mail()` fallback |
+| Maps | Google Maps embed |
+| Icons | Font Awesome |
 
-## Project Structure
+---
 
+## Features
+
+- **Dark Mode** — default on, persisted via `localStorage`, toggle on desktop + mobile nav
+- **Service Calculator** — 8 services, real-time quote, ₹500 minimum charge
+- **Contact Form** — PHPMailer SMTP (credentials via env vars), fallback to native `mail()`
+- **Responsive** — mobile-first, hamburger nav with overflow fix
+- **Admin Panel** — booking and enquiry management
+
+---
+
+## Running Locally
+
+```bash
+cd TAS
+php -S localhost:8000
+# → http://localhost:8000
 ```
-TAS/
-├── css/                  # Stylesheets (Bootstrap & Custom)
-├── scss/                 # SCSS source files
-├── js/                   # JavaScript logic
-├── img/                  # High-quality automotive assets
-├── lib/                  # Third-party libraries (Owl, WoW, etc.)
-├── php/                  # PHP backend logic & API handlers
-├── data/                 # Database storage (tas.db)
-└── index.html            # Main entry point
+
+**PHPMailer (production):**
+```bash
+composer require phpmailer/phpmailer vlucas/phpdotenv
 ```
+Set env vars: `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `SMTP_PORT`
 
-## Setup & Installation
+---
 
-1. **Clone & Navigate**:
-   ```bash
-   cd TAS
-   ```
-
-2. **Database Initialization**:
-   The system uses an auto-initializing SQLite database. Ensure the `data/` directory is writable.
-
-3. **Run Locally**:
-   Using PHP's built-in server:
-   ```bash
-   php -S localhost:8000
-   ```
-
-4. **Access**:
-   Open `http://localhost:8000` in your browser.
-
-## License
-
-Developed by Yaksi Shroff
+*Business website for The Auto Shoppers — car servicing & detailing*
