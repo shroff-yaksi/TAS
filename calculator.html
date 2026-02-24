@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
@@ -36,6 +36,18 @@
                 <a href="calculator.html" class="nav-item nav-link active">Calculator</a>
                 <a href="team.html" class="nav-item nav-link">Team</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <!-- Mobile-only items -->
+                <div class="d-lg-none mt-3 mb-2 px-2">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="text-muted">Dark Mode</span>
+                        <button id="dark-mode-toggle-mobile" class="btn btn-sm btn-outline-secondary rounded-circle"
+                            style="width: 40px; height: 40px; padding: 0;">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="booking.html" class="btn btn-danger w-100">Book Service<i
+                            class="fa fa-arrow-right ms-2"></i></a>
+                </div>
             </div>
             <div class="d-none d-lg-flex align-items-center me-4">
                 <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
@@ -70,7 +82,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-danger text-uppercase">// Price Estimator //</h6>
+                    <h6 class="text-danger text-uppercase">Price Estimator</h6>
                     <h1 class="mb-4">Get an Instant Estimate</h1>
                     <p class="mb-4">Select your vehicle type and the services you need to get a rough estimate of the
                         costs. Final prices may vary based on vehicle condition and specific spare parts required.</p>
@@ -90,25 +102,45 @@
                                 <label class="form-label font-weight-bold">Select Services</label>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input service-check" type="checkbox" value="2500" id="s1">
-                                    <label class="form-check-label" for="s1">General Service (Oil & Filters)</label>
+                                    <label class="form-check-label" for="s1">General Service (Oil &amp; Filters) —
+                                        ₹2,500 base</label>
                                 </div>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input service-check" type="checkbox" value="1500" id="s2">
-                                    <label class="form-check-label" for="s2">Wheel Alignment & Balancing</label>
+                                    <label class="form-check-label" for="s2">Wheel Alignment &amp; Balancing — ₹1,500
+                                        base</label>
                                 </div>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input service-check" type="checkbox" value="1200" id="s3">
-                                    <label class="form-check-label" for="s3">Brake Cleaning & Adjustment</label>
+                                    <label class="form-check-label" for="s3">Brake Cleaning &amp; Adjustment — ₹1,200
+                                        base</label>
                                 </div>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input service-check" type="checkbox" value="2000" id="s4">
-                                    <label class="form-check-label" for="s4">AC Gas Refill & Cleaning</label>
+                                    <label class="form-check-label" for="s4">AC Gas Refill &amp; Cleaning — ₹2,000
+                                        base</label>
                                 </div>
                                 <div class="form-check mb-2">
                                     <input class="form-check-input service-check" type="checkbox" value="800" id="s5">
-                                    <label class="form-check-label" for="s5">Full Interior Vacuuming</label>
+                                    <label class="form-check-label" for="s5">Full Interior Vacuuming — ₹800 base</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="700" id="s6">
+                                    <label class="form-check-label" for="s6">Tyre Rotation — ₹700 base</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="600" id="s7">
+                                    <label class="form-check-label" for="s7">Exterior Wash &amp; Window Polish — ₹600
+                                        base</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input service-check" type="checkbox" value="3500" id="s8">
+                                    <label class="form-check-label" for="s8">Full Detailing &amp; Paint Protection —
+                                        ₹3,500 base</label>
                                 </div>
                             </div>
+                            <small class="text-muted d-block mt-1">* Minimum charge ₹500. Final price includes vehicle
+                                segment multiplier.</small>
                         </form>
                     </div>
                 </div>
@@ -128,10 +160,65 @@
     <!-- Calculator End -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5">
-        <div class="container py-5 text-center">
-            <p>&copy; <a class="border-bottom" href="#">The Auto Shoppers</a>, All Right Reserved. Designed By Yaksi
-                Shroff</p>
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Adajan, Surat, Gujarat</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99789 65551</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@theautoshoppers.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/theautoshoppers.in/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://wa.me/919978965551" target="_blank"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Opening Hours</h4>
+                    <h6 class="text-light">Monday - Saturday:</h6>
+                    <p class="mb-4">09.30 AM - 07.30 PM</p>
+                    <h6 class="text-light">Sunday:</h6>
+                    <p class="mb-0">Closed</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Services</h4>
+                    <a class="btn btn-link d-block" href="service.html">Diagnostic Test</a>
+                    <a class="btn btn-link d-block" href="service.html">Engine Repair</a>
+                    <a class="btn btn-link d-block" href="service.html">Brake Service</a>
+                    <a class="btn btn-link d-block" href="service.html">Oil Change</a>
+                    <a class="btn btn-link d-block" href="service.html">A/C Service</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Subscribe for exclusive updates and seasonal offers.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form id="newsletterForm">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </form>
+                    </div>
+                    <div id="newsletterMessage" class="mt-2" style="font-size: 14px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">The Auto Shoppers</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a class="border-bottom" href="#">Yaksi Shroff</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Footer End -->
@@ -139,17 +226,57 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
     <script src="js/main.js"></script>
 
+    <!-- AJAX Handlers -->
     <script>
         $(document).ready(function () {
+            // Newsletter Handler
+            $('#newsletterForm').on('submit', function (e) {
+                e.preventDefault();
+                const email = $(this).find('input').val();
+                const btn = $(this).find('button');
+                btn.prop('disabled', true).text('...');
+
+                $.ajax({
+                    url: 'php/newsletter.php',
+                    type: 'POST',
+                    data: { email: email },
+                    success: function (res) {
+                        if (res.success) {
+                            $('#newsletterMessage').html('<span class="text-success">' + res.message + '</span>');
+                            $('#newsletterForm')[0].reset();
+                        } else {
+                            $('#newsletterMessage').html('<span class="text-warning">' + (res.message || 'Error') + '</span>');
+                        }
+                    },
+                    error: function () {
+                        $('#newsletterMessage').html('<span class="text-danger">Connection error.</span>');
+                    },
+                    complete: function () {
+                        btn.prop('disabled', false).text('SignUp');
+                    }
+                });
+            });
+
+            // Calculator Logic
             function calculate() {
                 let baseMultiplier = parseFloat($('#carSegment').val());
                 let total = 0;
                 $('.service-check:checked').each(function () {
                     total += parseFloat($(this).val());
                 });
-                let estimatedTotal = Math.round(total * baseMultiplier);
+                // Apply segment multiplier, then enforce ₹500 minimum if any service selected
+                let estimatedTotal = total > 0 ? Math.max(Math.round(total * baseMultiplier), 500) : 0;
                 $('#totalPrice').text(estimatedTotal.toLocaleString('en-IN'));
             }
 

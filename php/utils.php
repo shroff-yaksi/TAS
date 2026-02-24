@@ -104,14 +104,60 @@ function subscribeToNewsletter($email) {
 /**
  * Email Sending Helpers
  */
+/**
+ * Send email using PHPMailer (SMTP) with fallback to native mail()
+ * PHPMailer: composer require phpmailer/phpmailer
+ * SMTP creds loaded from environment variables or .env file
+ */
 function sendEmail($to, $subject, $body, $replyTo = null) {
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">" . "\r\n";
-    if ($replyTo) {
-        $headers .= "Reply-To: $replyTo" . "\r\n";
+    // Try PHPMailer first if available
+    $composerAutoload = __DIR__ . '/../vendor/autoload.php';
+    if (file_exists($composerAutoload)) {
+        require_once $composerAutoload;
+
+        // Load .env if exists (for local dev)
+        if (file_exists(__DIR__ . '/../.env')) {
+            $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+            $dotenv->safeLoad();
+        }
+
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+        try {
+            // SMTP credentials from environment variables
+            $mail->isSMTP();
+            $mail->Host       = $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $_ENV['SMTP_USER'] ?? '';
+            $mail->Password   = $_ENV['SMTP_PASS'] ?? '';
+            $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = (int)($_ENV['SMTP_PORT'] ?? 587);
+
+            $mail->setFrom($_ENV['SMTP_USER'] ?? FROM_EMAIL, FROM_NAME);
+            $mail->addAddress($to);
+            if ($replyTo) {
+                $mail->addReplyTo($replyTo);
+            }
+
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
+
+            $mail->send();
+            return true;
+        } catch (\PHPMailer\PHPMailer\Exception $e) {
+            error_log("PHPMailer Error: " . $mail->ErrorInfo);
+            // Fall through to native mail() below
+        }
     }
-    
+
+    // Fallback: native PHP mail()
+    $headers  = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8\r\n";
+    $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">\r\n";
+    if ($replyTo) {
+        $headers .= "Reply-To: $replyTo\r\n";
+    }
+
     return @mail($to, $subject, $body, $headers);
 }
 

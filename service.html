@@ -13,11 +13,11 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Web Fonts - Elegant Serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
@@ -46,39 +46,6 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark text-light p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-map-marker-alt text-danger me-2"></small>
-                    <small>Adajan, Surat, Gujarat</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <small class="far fa-clock text-danger me-2"></small>
-                    <small>Mon - Sat : 09.30 AM - 07.30 PM</small>
-                </div>
-            </div>
-            <div class="col-lg-5 px-5 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <small class="fa fa-phone-alt text-danger me-2"></small>
-                    <small>+91 99789 65551</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center mx-n2">
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
-                        href="https://www.instagram.com/theautoshoppers.in/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
-                        href="https://www.facebook.com/p/The-Auto-shopperrs-100090731028436/" target="_blank"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-link rounded-0" href="https://wa.me/919978965551" target="_blank"><i
-                            class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -96,6 +63,18 @@
                 <a href="calculator.html" class="nav-item nav-link">Calculator</a>
                 <a href="team.html" class="nav-item nav-link">Team</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <!-- Mobile-only items -->
+                <div class="d-lg-none mt-3 mb-2 px-2">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="text-muted">Dark Mode</span>
+                        <button id="dark-mode-toggle-mobile" class="btn btn-sm btn-outline-secondary rounded-circle"
+                            style="width: 40px; height: 40px; padding: 0;">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <a href="booking.html" class="btn btn-danger w-100">Book Service<i
+                            class="fa fa-arrow-right ms-2"></i></a>
+                </div>
             </div>
             <div class="d-none d-lg-flex align-items-center me-4">
                 <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
@@ -271,11 +250,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="service.html">Diagnostic Test</a>
-                    <a class="btn btn-link" href="service.html">Engine Repair</a>
-                    <a class="btn btn-link" href="service.html">Brake Service</a>
-                    <a class="btn btn-link" href="service.html">Oil Change</a>
-                    <a class="btn btn-link" href="service.html">A/C Service</a>
+                    <a class="btn btn-link d-block" href="service.html">Diagnostic Test</a>
+                    <a class="btn btn-link d-block" href="service.html">Engine Repair</a>
+                    <a class="btn btn-link d-block" href="service.html">Brake Service</a>
+                    <a class="btn btn-link d-block" href="service.html">Oil Change</a>
+                    <a class="btn btn-link d-block" href="service.html">A/C Service</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>

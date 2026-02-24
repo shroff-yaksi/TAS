@@ -1,13 +1,13 @@
 (function ($) {
     "use strict";
 
-    // Spinner
+    // Spinner — dismiss after 300ms to allow WOW.js + DOM to settle on all pages
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        }, 300);
     };
     spinner();
 
@@ -17,13 +17,13 @@
 
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.sticky-top').css('top', '0px');
-        } else {
-            $('.sticky-top').css('top', '-100px');
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 300) {
+    //         $('.sticky-top').css('top', '0px');
+    //     } else {
+    //         $('.sticky-top').css('top', '-100px');
+    //     }
+    // });
 
 
     // Dropdown on mouse hover
@@ -108,23 +108,29 @@
     // Dark Mode Toggle
     $(document).ready(function () {
         const darkMode = localStorage.getItem('darkMode');
+        
+        // Function to update all toggle icons
+        function updateToggleIcons(isDark) {
+            const iconClass = isDark ? 'fa-sun' : 'fa-moon';
+            const removeClass = isDark ? 'fa-moon' : 'fa-sun';
+            $('#dark-mode-toggle i, #dark-mode-toggle-mobile i')
+                .removeClass(removeClass)
+                .addClass(iconClass);
+        }
+        
         // Default to enabled if not set
         if (darkMode === 'enabled' || darkMode === null) {
             $('body').addClass('dark-mode');
-            $('#dark-mode-toggle i').removeClass('fa-moon').addClass('fa-sun');
+            updateToggleIcons(true);
             localStorage.setItem('darkMode', 'enabled');
         }
 
-        $('#dark-mode-toggle').click(function () {
+        // Handle clicks on both desktop and mobile toggle buttons
+        $('#dark-mode-toggle, #dark-mode-toggle-mobile').click(function () {
             $('body').toggleClass('dark-mode');
             const isDark = $('body').hasClass('dark-mode');
             localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-
-            if (isDark) {
-                $(this).find('i').removeClass('fa-moon').addClass('fa-sun');
-            } else {
-                $(this).find('i').removeClass('fa-sun').addClass('fa-moon');
-            }
+            updateToggleIcons(isDark);
         });
     });
 
