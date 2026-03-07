@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn btn-danger w-100 py-2 mt-2">Login</button>
         </form>
         <div class="text-center mt-4">
-            <a href="../index.html" class="text-muted small">Return to Website</a>
+            <a href="../index.php" class="text-muted small">Return to Website</a>
         </div>
     </div>
 </body>

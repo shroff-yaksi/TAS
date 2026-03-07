@@ -136,34 +136,32 @@
 
 })(jQuery);
 
+// Newsletter form handler — runs on all pages
+$(document).ready(function () {
+    $('#newsletterForm').on('submit', function (e) {
+        e.preventDefault();
+        var email = $(this).find('input').val();
+        var btn = $(this).find('button');
+        btn.prop('disabled', true).text('...');
 
-// setCookie = (cName, cValue, expdays) => {
-//     let date = new Date();
-//     date.serTime(date.getTime() + (expdays*24 * 60 * 60 * 1000));
-//     const expires = "expires=" + date.toUTCString();
-//     document.cookie = cName + "=" + cValue + ";" + expires + "; path=/, path=/about"
-// }
-
-// getCookie = (cName) => {
-//  const name = cName + "=";
-//  const cDecoded = decodeURIComponent(document.cookie);
-//  const cArr = cDecoded.split(';');
-//     let value;
-//     cArr.forEach(val => {
-//         if(val.indexOf(name) === 0) value = val.substring(name.length);
-//     })
-//     return value;
-
-// }
-// document.querySelector(#cookies-btn).addEventListener("click",() => {
-//     document.querySelector("#cookies").style.display = "none";
-
-//     setCookie("cookie",  true, 30)
-// })
-
-// cookieMessage - () => {
-//     if(!getCookie("cookie"))
-//         document.querySelector("cookies").style.display = "block";
-// }
-
-// window.addEventListener("load", cookieMessage);
+        $.ajax({
+            url: 'php/newsletter.php',
+            type: 'POST',
+            data: { email: email },
+            success: function (res) {
+                if (res.success) {
+                    $('#newsletterMessage').html('<span class="text-success">' + res.message + '</span>');
+                    $('#newsletterForm')[0].reset();
+                } else {
+                    $('#newsletterMessage').html('<span class="text-warning">' + (res.message || 'Error') + '</span>');
+                }
+            },
+            error: function () {
+                $('#newsletterMessage').html('<span class="text-danger">Connection error.</span>');
+            },
+            complete: function () {
+                btn.prop('disabled', false).text('SignUp');
+            }
+        });
+    });
+});

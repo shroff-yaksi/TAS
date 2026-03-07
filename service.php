@@ -1,0 +1,131 @@
+<?php
+$title = 'Services - The Auto Shoppers';
+$keywords = 'car service, engine repair, brake service, oil change, AC service surat';
+$description = 'Comprehensive car services at The Auto Shoppers: diagnostics, engine repair, brake service, oil change, AC service and more.';
+require 'partials/head.php';
+?>
+<body>
+<?php require 'partials/navbar.php'; ?>
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-danger text-uppercase">Our Services</h6>
+                <h1 class="mb-5">Complete Auto Care Solutions</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-microchip text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Diagnostic Test</h5>
+                        </div>
+                        <p>Advanced health checkup using specialized EFI tools to pinpoint electronic and performance
+                            issues.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Computer Diagnostics</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Sensor Calibration</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Error Code Reset</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-cogs text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Engine Servicing</h5>
+                        </div>
+                        <p>Complete engine tune-up to ensure optimal performance, fuel efficiency, and longevity.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Valve Adjustment</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Timing Check</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Cooling System</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-car-side text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Brake Repair</h5>
+                        </div>
+                        <p>Ensure your safety with expert brake pad replacement, disc resurfacing, and caliper
+                            servicing.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Pad & Shoe Change</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Brake Fluid Flush</li>
+                            <li><i class="fa fa-check text-success me-2"></i>ABS Service</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-oil-can text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Oil Changing</h5>
+                        </div>
+                        <p>Premium grade oil and filter changes to keep your engine's heart beating smoothly.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Synthetic Oil</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Genuine Filters</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Drain Bolt Washer</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-car-crash text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Dent & Paint</h5>
+                        </div>
+                        <p>Restore your vehicle's aesthetic beauty with precision dent removal and factory-finish
+                            painting.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Custom Color Matching</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Panel Beating</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Polishing</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-snowflake text-white"></i>
+                            </div>
+                            <h5 class="mb-0">A/C Service</h5>
+                        </div>
+                        <p>Stay cool with advanced gas recharge, compressor repairs, and thorough filter cleaning.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Gas Refill</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Leak Detection</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Duct Cleaning</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+<?php require 'partials/footer.php'; ?>
+<?php require 'partials/whatsapp.php'; ?>
+</body>
+</html>
