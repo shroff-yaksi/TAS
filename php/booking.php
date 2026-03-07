@@ -54,8 +54,21 @@ try {
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $stmt->execute([
-        $bookingId, $name, $email, $phone, $address, $carMake, $carModel, $carYear,
-        $regNo, $mileage, $serviceType, $serviceDate, $serviceTime, $urgency, $message
+        $bookingId,
+        $name,
+        $email,
+        $phone,
+        $address,
+        $carMake,
+        $carModel,
+        $carYear,
+        $regNo,
+        $mileage,
+        $serviceType,
+        $serviceDate,
+        $serviceTime,
+        $urgency,
+        $message
     ]);
 
     // Send Confirmation Email to Client
@@ -78,9 +91,9 @@ try {
         <div class='detail-row'><span class='detail-label'>Reg. No:</span> $regNo</div>
     </div>
     
-    <p>We will contact you shortly to confirm the details. If you need to reschedule, please call us at +91 99789 65551.</p>
+    <p>We will contact you shortly to confirm the details. If you need to reschedule, please call us at +91 99798 65551.</p>
     ";
-    
+
     $clientMail = getEmailTemplate("Booking Confirmed", $mailContent);
     sendEmail($email, "Your Booking is Confirmed - $bookingId", $clientMail);
 
@@ -99,7 +112,7 @@ try {
     sendEmail(ADMIN_EMAIL, "New Booking - $bookingId ($name)", $adminMail, $email);
 
     echo json_encode([
-        'success' => true, 
+        'success' => true,
         'message' => "Booking successful! Your ID is $bookingId. Check your email for details.",
         'bookingId' => $bookingId
     ]);

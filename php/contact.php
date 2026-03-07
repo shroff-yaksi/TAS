@@ -61,7 +61,7 @@ try {
         <div class='details-box'>
             <p><strong>Your Inquiry Reference:</strong> $contactId</p>
         </div>
-        <p>Need urgent help? Call us at +91 99789 65551.</p>
+        <p>Need urgent help? Call us at +91 99798 65551.</p>
     ");
     sendEmail($email, "We've Received Your Message - $contactId", $userMail);
 

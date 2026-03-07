@@ -14,7 +14,7 @@ ini_set('error_log', __DIR__ . '/../data/error.log');
 date_default_timezone_set('Asia/Kolkata');
 
 // Email configuration
-define('ADMIN_EMAIL', 'info@theautoshoppers.com');
+define('ADMIN_EMAIL', 'theautoshoppers.in@gmail.com');
 define('FROM_EMAIL', 'noreply@theautoshoppers.com');
 define('FROM_NAME', 'The Auto Shoppers');
 

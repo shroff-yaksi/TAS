@@ -8,7 +8,8 @@ require_once 'db.php';
 /**
  * Sanitize user input
  */
-function sanitizeInput($data) {
+function sanitizeInput($data)
+{
     if (is_array($data)) {
         return array_map('sanitizeInput', $data);
     }
@@ -21,25 +22,29 @@ function sanitizeInput($data) {
 /**
  * Generate unique IDs
  */
-function generateBookingId() {
+function generateBookingId()
+{
     return 'TAS' . date('Ymd') . strtoupper(substr(uniqid(), -6));
 }
 
-function generateContactId() {
+function generateContactId()
+{
     return 'CNT' . date('Ymd') . strtoupper(substr(uniqid(), -6));
 }
 
 /**
  * CSRF Protection
  */
-function getCsrfToken() {
+function getCsrfToken()
+{
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     }
     return $_SESSION['csrf_token'];
 }
 
-function verifyCsrfToken($token) {
+function verifyCsrfToken($token)
+{
     if (!isset($_SESSION['csrf_token']) || empty($token)) {
         return false;
     }
@@ -49,7 +54,8 @@ function verifyCsrfToken($token) {
 /**
  * Rate Limiting
  */
-function isRateLimited($action, $limit = 5, $period = 3600) {
+function isRateLimited($action, $limit = 5, $period = 3600)
+{
     $ip = $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
     $db = Database::getInstance();
     $now = time();
@@ -80,22 +86,26 @@ function isRateLimited($action, $limit = 5, $period = 3600) {
 /**
  * Validate email address
  */
-function isValidEmail($email) {
+function isValidEmail($email)
+{
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
 /**
  * Database Helpers
  */
-function emailExistsInNewsletter($email) {
+function emailExistsInNewsletter($email)
+{
     $db = Database::getInstance();
     $stmt = $db->prepare("SELECT id FROM newsletter WHERE email = ?");
     $stmt->execute([$email]);
     return $stmt->fetch() !== false;
 }
 
-function subscribeToNewsletter($email) {
-    if (emailExistsInNewsletter($email)) return true;
+function subscribeToNewsletter($email)
+{
+    if (emailExistsInNewsletter($email))
+        return true;
     $db = Database::getInstance();
     $stmt = $db->prepare("INSERT INTO newsletter (email) VALUES (?)");
     return $stmt->execute([$email]);
@@ -109,7 +119,8 @@ function subscribeToNewsletter($email) {
  * PHPMailer: composer require phpmailer/phpmailer
  * SMTP creds loaded from environment variables or .env file
  */
-function sendEmail($to, $subject, $body, $replyTo = null) {
+function sendEmail($to, $subject, $body, $replyTo = null)
+{
     // Try PHPMailer first if available
     $composerAutoload = __DIR__ . '/../vendor/autoload.php';
     if (file_exists($composerAutoload)) {
@@ -125,12 +136,12 @@ function sendEmail($to, $subject, $body, $replyTo = null) {
         try {
             // SMTP credentials from environment variables
             $mail->isSMTP();
-            $mail->Host       = $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com';
-            $mail->SMTPAuth   = true;
-            $mail->Username   = $_ENV['SMTP_USER'] ?? '';
-            $mail->Password   = $_ENV['SMTP_PASS'] ?? '';
+            $mail->Host = $_ENV['SMTP_HOST'] ?? 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = $_ENV['SMTP_USER'] ?? '';
+            $mail->Password = $_ENV['SMTP_PASS'] ?? '';
             $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port       = (int)($_ENV['SMTP_PORT'] ?? 587);
+            $mail->Port = (int) ($_ENV['SMTP_PORT'] ?? 587);
 
             $mail->setFrom($_ENV['SMTP_USER'] ?? FROM_EMAIL, FROM_NAME);
             $mail->addAddress($to);
@@ -140,7 +151,7 @@ function sendEmail($to, $subject, $body, $replyTo = null) {
 
             $mail->isHTML(true);
             $mail->Subject = $subject;
-            $mail->Body    = $body;
+            $mail->Body = $body;
 
             $mail->send();
             return true;
@@ -151,7 +162,7 @@ function sendEmail($to, $subject, $body, $replyTo = null) {
     }
 
     // Fallback: native PHP mail()
-    $headers  = "MIME-Version: 1.0\r\n";
+    $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8\r\n";
     $headers .= "From: " . FROM_NAME . " <" . FROM_EMAIL . ">\r\n";
     if ($replyTo) {
@@ -161,7 +172,8 @@ function sendEmail($to, $subject, $body, $replyTo = null) {
     return @mail($to, $subject, $body, $headers);
 }
 
-function getEmailTemplate($title, $content) {
+function getEmailTemplate($title, $content)
+{
     return "
     <html>
     <head>
@@ -189,7 +201,7 @@ function getEmailTemplate($title, $content) {
             <div class='footer'>
                 <p><strong>The Auto Shoppers</strong><br>
                 F.P. 134, Beside Western city, Opp. L.P.Savani CNG Pump, Adajan, Surat, Gujarat 395009</p>
-                <p>Phone: +91 99789 65551 | Email: info@theautoshoppers.com</p>
+                <p>Phone: +91 99798 65551 | Email: theautoshoppers.in@gmail.com</p>
                 <p>&copy; " . date('Y') . " The Auto Shoppers. All rights reserved.</p>
             </div>
         </div>
