@@ -71,11 +71,15 @@ require 'partials/head.php';
                                         required>
                                         <option value="" selected disabled>Select A Service</option>
                                         <option value="Diagnostic Test">Diagnostic Test</option>
-                                        <option value="Engine Service">Engine Service</option>
+                                        <option value="Engine Servicing">Engine Servicing</option>
                                         <option value="Brake Repair">Brake Repair</option>
                                         <option value="Oil Changing">Oil Changing</option>
+                                        <option value="Dent & Paint">Dent & Paint</option>
                                         <option value="A/C Service">A/C Service</option>
-                                        <option value="Wheel Alignment">Wheel Alignment</option>
+                                        <option value="Transmission Servicing">Transmission Servicing</option>
+                                        <option value="Suspension Repair">Suspension Repair</option>
+                                        <option value="Wheel Alignment & Balancing">Wheel Alignment & Balancing</option>
+                                        <option value="Body Coating">Body Coating</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">

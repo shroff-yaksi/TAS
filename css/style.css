@@ -592,6 +592,7 @@ body.dark-mode .navbar .dropdown-item:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 28px;
 }
 
 .service-item h5 {

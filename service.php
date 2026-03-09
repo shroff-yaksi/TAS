@@ -120,6 +120,74 @@ require 'partials/head.php';
                         <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-cogs text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Transmission Servicing</h5>
+                        </div>
+                        <p>Expert transmission fluid replacement and gear system maintenance for smooth shifting.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Fluid Change</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Filter Replacement</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Clutch Service</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-wrench text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Suspension Repair</h5>
+                        </div>
+                        <p>Complete suspension system check and repair for improved ride comfort and handling.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Shock Absorbers</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Strut Mounts</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Ball Joints</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-sliders-h text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Wheel Alignment & Balancing</h5>
+                        </div>
+                        <p>Precision wheel alignment and balancing for even tire wear and smooth driving.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>3D Alignment</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Weight Balancing</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Tire Rotation</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-paint-roller text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Body Coating</h5>
+                        </div>
+                        <p>Advanced protective coatings to shield your vehicle's exterior and enhance shine.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Underbody Coating</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Polymer Coating</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Ceramic Coating</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

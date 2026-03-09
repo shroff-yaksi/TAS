@@ -33,7 +33,6 @@
                 </div>
                 <a href="service.php" class="nav-item nav-link <?= $currentPage === 'service.php' ? 'active' : '' ?>">Services</a>
                 <a href="offers.php" class="nav-item nav-link <?= $currentPage === 'offers.php' ? 'active' : '' ?>">Offers</a>
-                <a href="calculator.php" class="nav-item nav-link <?= $currentPage === 'calculator.php' ? 'active' : '' ?>">Calculator</a>
                 <a href="contact.php" class="nav-item nav-link <?= $currentPage === 'contact.php' ? 'active' : '' ?>">Contact</a>
                 <!-- Mobile-only items -->
                 <div class="d-lg-none mt-3 mb-2 px-2">
