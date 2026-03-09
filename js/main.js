@@ -57,13 +57,13 @@
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
+            $('.back-to-top').addClass('show');
         } else {
-            $('.back-to-top').fadeOut('slow');
+            $('.back-to-top').removeClass('show');
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 0, 'swing');
         return false;
     });
 
@@ -118,11 +118,12 @@
                 .addClass(iconClass);
         }
         
-        // Default to enabled if not set
-        if (darkMode === 'enabled' || darkMode === null) {
+        // Default to light mode if not set
+        if (darkMode === 'enabled') {
             $('body').addClass('dark-mode');
             updateToggleIcons(true);
-            localStorage.setItem('darkMode', 'enabled');
+        } else if (darkMode === null) {
+            localStorage.setItem('darkMode', 'disabled');
         }
 
         // Handle clicks on both desktop and mobile toggle buttons

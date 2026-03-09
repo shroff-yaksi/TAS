@@ -4,8 +4,9 @@ $keywords = 'car service, auto repair, car maintenance, about auto shoppers';
 $description = 'Discover the legacy of The Auto Shoppers. Over 30 years of excellence in automotive repair and service in Surat.';
 require 'partials/head.php';
 ?>
+
 <body>
-<?php require 'partials/navbar.php'; ?>
+    <?php require 'partials/navbar.php'; ?>
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -83,7 +84,7 @@ require 'partials/head.php';
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">20</h2>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">22</h2>
                     <p class="text-white mb-0">Expert Technicians</p>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
@@ -93,7 +94,7 @@ require 'partials/head.php';
                 </div>
                 <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-car fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up">17251</h2>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">49742</h2>
                     <p class="text-white mb-0">Complete Projects</p>
                 </div>
             </div>
@@ -101,7 +102,8 @@ require 'partials/head.php';
     </div>
     <!-- Fact End -->
 
-<?php require 'partials/footer.php'; ?>
-<?php require 'partials/whatsapp.php'; ?>
+    <?php require 'partials/footer.php'; ?>
+    <?php require 'partials/whatsapp.php'; ?>
 </body>
+
 </html>
