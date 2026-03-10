@@ -45,9 +45,9 @@ require 'partials/head.php';
                     </div>
                 </div>
                 <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                    <iframe class="position-relative rounded w-100 h-100"
+                    <iframe class="position-relative rounded w-100 contact-map-iframe"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.48880114516265!2d72.77910821436583!3d21.199281930565146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d948b9cbc91%3A0x1e6dcd8d36cce190!2sThe%20Auto%20Shoppers!5e0!3m2!1sen!2sin!4v1772800171666!5m2!1sen!2sin"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                        frameborder="0" style="min-height: 400px; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </div>
                 <div class="col-md-6">

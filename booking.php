@@ -49,7 +49,7 @@ require 'partials/head.php';
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="bg-light h-100 d-flex flex-column justify-content-center p-5 wow zoomIn"
+                    <div class="bg-light h-100 d-flex flex-column justify-content-center p-3 p-md-4 p-lg-5 wow zoomIn"
                         data-wow-delay="0.4s">
                         <h2 class="text-dark mb-4 text-center">Schedule Service</h2>
                         <form id="bookingForm">

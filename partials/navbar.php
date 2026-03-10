@@ -13,9 +13,9 @@
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-4 px-xl-5">
             <h2 class="m-0 text-danger d-flex align-items-center gap-1"
                 style="font-family: 'Times New Roman', Times, serif; font-weight: 700; letter-spacing: 0.5px;">
-                <img src="img/tas_logo_light_theme.png" alt="TAS Logo" class="logo-light" style="max-height: 40px;">
-                <img src="img/tas_logo_dark_theme.png" alt="TAS Logo" class="logo-dark" style="max-height: 40px;">
-                THE AUTO SHOPPERS
+                <img src="img/tas_logo_light_theme.png" alt="TAS Logo" class="logo-light" style="max-height: 36px;">
+                <img src="img/tas_logo_dark_theme.png" alt="TAS Logo" class="logo-dark" style="max-height: 36px;">
+                <span class="navbar-brand-text">THE AUTO SHOPPERS</span>
             </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

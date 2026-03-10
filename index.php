@@ -189,7 +189,7 @@ require 'partials/head.php';
                     <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
                         <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg"
                             style="object-fit: cover;" alt="">
-                        <div class="position-absolute top-0 start-0 bg-light d-flex align-items-center justify-content-center mt-n5 ms-n5"
+                        <div class="position-absolute top-0 start-0 bg-light d-flex align-items-center justify-content-center about-badge"
                             style="width: 150px; height: 150px;">
                             <div class="text-center">
                                 <h1 class="display-4 text-danger mb-0">30</h1>
