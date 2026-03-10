@@ -1149,3 +1149,160 @@ body.dark-mode .brand-card img {
     margin-left: auto;
     align-self: flex-start;
 }
+
+/* =============================================
+   RESPONSIVE FIXES — 2026-03-10
+   Breakpoints: ≤1200px, ≤992px, ≤768px, ≤576px, ≤400px
+   ============================================= */
+
+/* About badge — only apply negative offset on lg+ so it doesn't overflow on mobile */
+.about-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (min-width: 992px) {
+    .about-badge {
+        margin-top: -3rem;
+        margin-left: -3rem;
+    }
+}
+
+/* Navbar brand text — hide on very small screens (≤400px) to prevent overflow */
+@media (max-width: 400px) {
+    .navbar-brand-text {
+        display: none;
+    }
+}
+
+/* Carousel — cap height on mobile so it doesn't dominate the viewport */
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        height: 60vh;
+        min-height: 340px;
+    }
+}
+
+@media (max-width: 576px) {
+    #header-carousel .carousel-item {
+        height: 55vh;
+        min-height: 300px;
+    }
+
+    .carousel-caption {
+        padding: 10px;
+    }
+}
+
+/* About image column — ensure proper min-height when stacked on mobile */
+@media (max-width: 991.98px) {
+    .about-img-col {
+        min-height: 300px !important;
+    }
+}
+
+/* Contact map — scale down on mobile */
+@media (max-width: 767px) {
+    .contact-map-iframe {
+        height: 280px !important;
+        min-height: 280px !important;
+    }
+}
+
+/* Service items — smaller icon and heading on mobile */
+@media (max-width: 576px) {
+    .service-item .btn-square {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+
+    .service-item h5 {
+        font-size: 16px;
+    }
+}
+
+/* Booking info emergency panel — reduce padding on mobile */
+@media (max-width: 576px) {
+    .booking .bg-danger.p-4,
+    .container-xxl .bg-danger.p-4 {
+        padding: 1rem !important;
+    }
+}
+
+/* Footer newsletter — prevent button overlapping input on small screens */
+@media (max-width: 576px) {
+    .footer .position-relative input.form-control {
+        padding-right: 5rem;
+    }
+
+    .footer .col-lg-5 .row .col-6 a.btn-link {
+        font-size: 13px;
+        padding: 4px 0;
+    }
+}
+
+/* App store buttons — tighter on mobile */
+@media (max-width: 576px) {
+    .app-store-btn {
+        min-width: 130px;
+        padding: 8px 14px;
+    }
+
+    .app-store-btn .btn-text span {
+        font-size: 14px;
+    }
+}
+
+/* WhatsApp + back-to-top — smaller on mobile so they don't crowd content */
+@media (max-width: 576px) {
+    .whatsapp-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+        bottom: 20px;
+        left: 16px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mobile App Preview section — reduce padding on mobile */
+@media (max-width: 576px) {
+    .bg-primary.rounded.p-5 {
+        padding: 1.5rem !important;
+    }
+
+    .bg-primary.rounded h1.display-4 {
+        font-size: 1.8rem;
+    }
+}
+
+/* General heading scale on mobile */
+@media (max-width: 576px) {
+    h1:not(.display-3) {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+    }
+
+    .display-3 {
+        font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+    }
+}
+
+/* Prevent horizontal overflow site-wide */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
