@@ -1134,7 +1134,7 @@ body.dark-mode .brand-card img {
 }
 
 body.dark-mode .brand-card:hover img {
-    filter: grayscale(0) invert(0) opacity(1);
+    filter: grayscale(1) invert(1) opacity(1);
 }
 
 /* Pause on hover */
