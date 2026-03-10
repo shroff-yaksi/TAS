@@ -12,7 +12,7 @@ require 'partials/head.php';
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-6 pt-4" style="min-height: 400px;">
+                <div class="col-lg-6 pt-4 about-img-col" style="min-height: 400px;">
                     <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
                         <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg"
                             style="object-fit: cover;" alt="">
