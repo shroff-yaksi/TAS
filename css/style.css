@@ -1383,14 +1383,12 @@ body.dark-mode .brand-card img {
 }
 
 /* =============================================
-   FOOTER — tighten on very small screens
+   FOOTER — padding on mobile
    ============================================= */
-@media (max-width: 576px) {
-    .footer .col-lg-4,
-    .footer .col-lg-5,
-    .footer .col-lg-3 {
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media (max-width: 768px) {
+    .footer .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 
