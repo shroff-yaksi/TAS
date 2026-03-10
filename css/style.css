@@ -1065,6 +1065,78 @@ body.dark-mode .skeleton {
     line-height: 1.2;
 }
 
+/* =============================================
+   Brands Marquee Section
+   ============================================= */
+.brands-section {
+    background-color: var(--light);
+    overflow: hidden;
+}
+
+body.dark-mode .brands-section {
+    background-color: #1a1a1f;
+}
+
+.brands-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.brands-track {
+    display: flex;
+    width: max-content;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.brands-track-left {
+    animation: brandsScrollLeft 35s linear infinite;
+}
+
+.brands-track-right {
+    animation: brandsScrollRight 35s linear infinite;
+}
+
+@keyframes brandsScrollLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes brandsScrollRight {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.brand-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0 24px;
+    user-select: none;
+}
+
+.brand-card img {
+    width: 100px;
+    height: 64px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.25);
+}
+
+body.dark-mode .brand-card img {
+    filter: brightness(1.1);
+}
+
+/* Pause on hover */
+.brands-track-left:hover,
+.brands-track-right:hover {
+    animation-play-state: paused;
+}
+
 /* Coming Soon badge on store buttons */
 .app-store-btn .coming-soon-badge {
     font-size: 9px;

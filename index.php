@@ -112,6 +112,75 @@ require 'partials/head.php';
     </div>
     <!-- Service Highlights End -->
 
+    <!-- Brands We Service Start -->
+    <div class="container-fluid brands-section py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h6 class="text-danger text-uppercase">Multi-Brand Service</h6>
+                <h1 class="mb-2">Car Brands We Service</h1>
+                <p class="text-muted">From budget hatchbacks to luxury sedans — we service them all</p>
+            </div>
+        </div>
+        <div class="brands-marquee-wrapper">
+            <!-- Row 1: scrolls left -->
+            <div class="brands-track brands-track-left">
+                <?php
+                $cdn = 'https://cdn.jsdelivr.net/gh/filippofilip95/car-logos-dataset@master/logos/optimized';
+                $brands_row1 = [
+                    ['Maruti Suzuki', 'suzuki'],
+                    ['Hyundai',       'hyundai'],
+                    ['Tata',          'tata'],
+                    ['Mahindra',      'mahindra'],
+                    ['Kia',           'kia'],
+                    ['Renault',       'renault'],
+                    ['Nissan',        'nissan'],
+                    ['Honda',         'honda'],
+                    ['Toyota',        'toyota'],
+                    ['Volkswagen',    'volkswagen'],
+                    ['Skoda',         'skoda'],
+                    ['MG',            'mg'],
+                    ['Jeep',          'jeep'],
+                ];
+                // Duplicate for seamless loop
+                $brands_row1 = array_merge($brands_row1, $brands_row1);
+                foreach ($brands_row1 as $brand): ?>
+                    <div class="brand-card">
+                        <img src="<?= $cdn ?>/<?= $brand[1] ?>.png"
+                             alt="<?= $brand[0] ?>"
+                             onerror="this.style.display='none'">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <!-- Row 2: scrolls right -->
+            <div class="brands-track brands-track-right mt-3">
+                <?php
+                $brands_row2 = [
+                    ['Ford',        'ford'],
+                    ['BMW',         'bmw'],
+                    ['Mercedes',    'mercedes-benz'],
+                    ['Audi',        'audi'],
+                    ['Volvo',       'volvo'],
+                    ['Land Rover',  'land-rover'],
+                    ['Porsche',     'porsche'],
+                    ['Jaguar',      'jaguar'],
+                    ['Lexus',       'lexus'],
+                    ['MINI',        'mini'],
+                    ['Citroen',     'citroen'],
+                    ['Isuzu',       'isuzu'],
+                ];
+                $brands_row2 = array_merge($brands_row2, $brands_row2);
+                foreach ($brands_row2 as $brand): ?>
+                    <div class="brand-card">
+                        <img src="<?= $cdn ?>/<?= $brand[1] ?>.png"
+                             alt="<?= $brand[0] ?>"
+                             onerror="this.style.display='none'">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <!-- Brands We Service End -->
+
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
