@@ -188,6 +188,23 @@ require 'partials/head.php';
                         <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column bg-light p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-danger rounded-circle me-3">
+                                <i class="fa fa-shower text-white"></i>
+                            </div>
+                            <h5 class="mb-0">Car Wash & Interior Cleaning</h5>
+                        </div>
+                        <p>Professional car washing and deep interior cleaning to keep your vehicle spotless inside and out.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li><i class="fa fa-check text-success me-2"></i>Foam Wash</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Interior Vacuuming</li>
+                            <li><i class="fa fa-check text-success me-2"></i>Seat & Carpet Cleaning</li>
+                        </ul>
+                        <a class="btn btn-danger mt-auto" href="booking.php">Book Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

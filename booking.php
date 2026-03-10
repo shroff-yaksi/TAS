@@ -80,6 +80,7 @@ require 'partials/head.php';
                                         <option value="Suspension Repair">Suspension Repair</option>
                                         <option value="Wheel Alignment & Balancing">Wheel Alignment & Balancing</option>
                                         <option value="Body Coating">Body Coating</option>
+                                        <option value="Car Wash & Interior Cleaning">Car Wash & Interior Cleaning</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">

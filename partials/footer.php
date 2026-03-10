@@ -31,6 +31,7 @@
                             <a class="btn btn-link d-block" href="service.php">Brake Repair</a>
                             <a class="btn btn-link d-block" href="service.php">Oil Changing</a>
                             <a class="btn btn-link d-block" href="service.php">Dent & Paint</a>
+                            <a class="btn btn-link d-block" href="service.php">Car Wash & Interior Cleaning</a>
                         </div>
                         <div class="col-6">
                             <a class="btn btn-link d-block" href="service.php">A/C Service</a>
