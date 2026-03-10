@@ -109,13 +109,14 @@
     $(document).ready(function () {
         const darkMode = localStorage.getItem('darkMode');
         
-        // Function to update all toggle icons
+        // Function to update all toggle icons and mobile label
         function updateToggleIcons(isDark) {
             const iconClass = isDark ? 'fa-sun' : 'fa-moon';
             const removeClass = isDark ? 'fa-moon' : 'fa-sun';
             $('#dark-mode-toggle i, #dark-mode-toggle-mobile i')
                 .removeClass(removeClass)
                 .addClass(iconClass);
+            $('#dark-mode-label').text(isDark ? 'Light Mode' : 'Dark Mode');
         }
         
         // Default to light mode if not set

@@ -37,7 +37,7 @@
                 <!-- Mobile-only items -->
                 <div class="d-lg-none mt-3 mb-2 px-2">
                     <div class="d-flex align-items-center justify-content-between mb-3">
-                        <span class="text-muted">Dark Mode</span>
+                        <span id="dark-mode-label" class="text-muted">Dark Mode</span>
                         <button id="dark-mode-toggle-mobile" class="btn btn-sm btn-outline-secondary rounded-circle"
                             style="width: 40px; height: 40px; padding: 0;">
                             <i class="fas fa-moon"></i>
