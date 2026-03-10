@@ -1189,10 +1189,6 @@ body.dark-mode .brand-card img {
         height: 55vh;
         min-height: 300px;
     }
-
-    .carousel-caption {
-        padding: 10px;
-    }
 }
 
 /* About image column — ensure proper min-height when stacked on mobile */
@@ -1299,14 +1295,18 @@ body.dark-mode .brand-card img {
 /* overflow-x: hidden already set on body earlier in this file */
 
 /* =============================================
-   CAROUSEL BUTTON GROUP — flex row, never stacks
+   CAROUSEL BUTTON GROUP — always a flex row, no text-wrap
    ============================================= */
 .carousel-btn-group {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-wrap: nowrap;       /* never stack the two buttons */
+    gap: 10px;
     justify-content: center;
-    margin-top: 4px;
+    margin-top: 8px;
+}
+
+.carousel-btn-group .btn {
+    white-space: nowrap;     /* prevent "BOOK\nNOW" word-wrap */
 }
 
 @media (min-width: 992px) {
@@ -1315,20 +1315,30 @@ body.dark-mode .brand-card img {
     }
 }
 
+/* Carousel caption — full width on mobile so buttons have room */
 @media (max-width: 768px) {
+    .carousel-caption {
+        left: 0 !important;
+        right: 0 !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .carousel-btn-group .btn {
-        padding: 10px 22px;
+        padding: 10px 20px;
         font-size: 13px;
     }
 }
 
 @media (max-width: 576px) {
+    .carousel-caption {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
     .carousel-btn-group .btn {
-        padding: 9px 18px;
+        padding: 9px 16px;
         font-size: 12px;
-        flex: 1 1 auto;    /* each button grows equally but stays inline */
-        max-width: 48%;    /* two per row max */
-        text-align: center;
     }
 }
 
