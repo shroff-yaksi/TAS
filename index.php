@@ -126,6 +126,8 @@ require 'partials/head.php';
             <div class="brands-track brands-track-left">
                 <?php
                 $cdn = 'https://cdn.jsdelivr.net/gh/filippofilip95/car-logos-dataset@master/logos/optimized';
+                // Logos that are dark/black — need invert in dark mode instead of showing original color
+                $dark_logos = ['audi', 'nissan', 'jaguar', 'land-rover', 'mercedes-benz'];
                 $brands_row1 = [
                     ['Maruti Suzuki', 'suzuki'],
                     ['Hyundai',       'hyundai'],
@@ -144,7 +146,7 @@ require 'partials/head.php';
                 // Duplicate for seamless loop
                 $brands_row1 = array_merge($brands_row1, $brands_row1);
                 foreach ($brands_row1 as $brand): ?>
-                    <div class="brand-card">
+                    <div class="brand-card<?= in_array($brand[1], $dark_logos) ? ' logo-dark-brand' : '' ?>">
                         <img src="<?= $cdn ?>/<?= $brand[1] ?>.png"
                              alt="<?= $brand[0] ?>"
                              onerror="this.style.display='none'">
@@ -170,7 +172,7 @@ require 'partials/head.php';
                 ];
                 $brands_row2 = array_merge($brands_row2, $brands_row2);
                 foreach ($brands_row2 as $brand): ?>
-                    <div class="brand-card">
+                    <div class="brand-card<?= in_array($brand[1], $dark_logos) ? ' logo-dark-brand' : '' ?>">
                         <img src="<?= $cdn ?>/<?= $brand[1] ?>.png"
                              alt="<?= $brand[0] ?>"
                              onerror="this.style.display='none'">

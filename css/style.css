@@ -1129,11 +1129,18 @@ body.dark-mode .brands-section {
     filter: grayscale(0) opacity(1);
 }
 
+/* Dark mode — all logos: greyscale + invert so they're visible on dark bg */
 body.dark-mode .brand-card img {
     filter: grayscale(1) invert(1) opacity(0.7);
 }
 
-body.dark-mode .brand-card:hover img {
+/* Dark mode hover — colored logos: restore original color */
+body.dark-mode .brand-card:not(.logo-dark-brand):hover img {
+    filter: grayscale(0) invert(0) opacity(1);
+}
+
+/* Dark mode hover — inherently dark/black logos: keep inverted (stays white/visible) */
+body.dark-mode .brand-card.logo-dark-brand:hover img {
     filter: grayscale(1) invert(1) opacity(1);
 }
 
