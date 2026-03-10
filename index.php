@@ -24,10 +24,10 @@ require 'partials/head.php';
                                         Vehicle</h1>
                                     <p class="text-white mb-4 animated slideInDown">Quality service, trusted mechanics,
                                         and genuine parts. Your car deserves the best!</p>
-                                    <a href="booking.php"
-                                        class="btn btn-danger py-3 px-5 me-3 animated slideInDown">Book Now</a>
-                                    <a href="service.php" class="btn btn-light py-3 px-5 animated slideInDown">Our
-                                        Services</a>
+                                    <div class="carousel-btn-group animated slideInDown">
+                                        <a href="booking.php" class="btn btn-danger py-3 px-5">Book Now</a>
+                                        <a href="service.php" class="btn btn-light py-3 px-5">Our Services</a>
+                                    </div>
                                 </div>
                                 <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                     <img class="img-fluid" src="img/caroselcar.jpg" alt="">
@@ -48,10 +48,10 @@ require 'partials/head.php';
                                         Center</h1>
                                     <p class="text-white mb-4 animated slideInDown">From routine maintenance to complex
                                         repairs, we handle it all with precision and care.</p>
-                                    <a href="booking.php"
-                                        class="btn btn-danger py-3 px-5 me-3 animated slideInDown">Book Now</a>
-                                    <a href="contact.php" class="btn btn-light py-3 px-5 animated slideInDown">Contact
-                                        Us</a>
+                                    <div class="carousel-btn-group animated slideInDown">
+                                        <a href="booking.php" class="btn btn-danger py-3 px-5">Book Now</a>
+                                        <a href="contact.php" class="btn btn-light py-3 px-5">Contact Us</a>
+                                    </div>
                                 </div>
                                 <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                     <img class="img-fluid" src="img/caroselcar.jpg" alt="">

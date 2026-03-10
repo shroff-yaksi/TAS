@@ -1297,3 +1297,98 @@ body.dark-mode .brand-card img {
 }
 
 /* overflow-x: hidden already set on body earlier in this file */
+
+/* =============================================
+   CAROUSEL BUTTON GROUP — flex row, never stacks
+   ============================================= */
+.carousel-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+@media (min-width: 992px) {
+    .carousel-btn-group {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-btn-group .btn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-btn-group .btn {
+        padding: 9px 18px;
+        font-size: 12px;
+        flex: 1 1 auto;    /* each button grows equally but stays inline */
+        max-width: 48%;    /* two per row max */
+        text-align: center;
+    }
+}
+
+/* =============================================
+   SERVICE HIGHLIGHT BOXES — reduce vertical padding on mobile
+   ============================================= */
+@media (max-width: 576px) {
+    .container-xxl .d-flex.py-5.px-4 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* =============================================
+   TEAM PAGE — ensure images don't stretch
+   ============================================= */
+.team-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+}
+
+@media (max-width: 576px) {
+    .team-item img {
+        height: 220px;
+    }
+}
+
+/* =============================================
+   UPDATES PAGE — consistent card image height
+   ============================================= */
+@media (max-width: 992px) {
+    .updates-card img,
+    .container-xxl .bg-light.p-4.rounded img.img-fluid {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+/* =============================================
+   FOOTER — tighten on very small screens
+   ============================================= */
+@media (max-width: 576px) {
+    .footer .col-lg-4,
+    .footer .col-lg-5,
+    .footer .col-lg-3 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* =============================================
+   CAROUSEL — remove mb-5 gap on mobile
+   ============================================= */
+@media (max-width: 768px) {
+    .container-fluid.p-0.mb-5 {
+        margin-bottom: 0 !important;
+    }
+}
