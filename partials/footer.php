@@ -5,10 +5,10 @@
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Get In Touch</h4>
                     <p class="mb-2"><a href="https://maps.app.goo.gl/8qUdaxQss6PjkeA48" target="_blank"
-                            class="text-light text-decoration-none"><i class="fa fa-map-marker-alt me-3"></i>5QXH+JQW,
+                            class="footer-link text-light text-decoration-none"><i class="fa fa-map-marker-alt me-3"></i>5QXH+JQW,
                             Adajan Gam, Surat, Gujarat 394510</a></p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 99798 65551</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>theautoshoppers.in@gmail.com</p>
+                    <p class="mb-2"><a href="tel:+919979865551" class="footer-link text-light text-decoration-none"><i class="fa fa-phone-alt me-3"></i>+91 99798 65551</a></p>
+                    <p class="mb-2"><a href="mailto:theautoshoppers.in@gmail.com" class="footer-link text-light text-decoration-none"><i class="fa fa-envelope me-3 text-danger"></i>theautoshoppers.in@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/theautoshoppers.in/"
                             target="_blank"><i class="fab fa-instagram"></i></a>
@@ -43,6 +43,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
+                    <a href="contact.php" class="btn btn-danger w-100 mb-4 py-3" style="font-size: 18px; letter-spacing: 1px;"><i class="fa fa-envelope me-2"></i>Contact Us</a>
                     <h4 class="text-light mb-4">Newsletter</h4>
                     <p>Subscribe for exclusive updates and seasonal offers.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
@@ -71,6 +72,11 @@
         </div>
     </div>
     <!-- Footer End -->
+
+    <!-- Floating Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="dark-mode-float">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

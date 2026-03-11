@@ -31,14 +31,14 @@ require 'partials/head.php';
                         <div class="col-md-4">
                             <div class="bg-light d-flex flex-column justify-content-center p-4 h-100">
                                 <h5 class="text-uppercase">Call Us</h5>
-                                <p class="m-0"><i class="fa fa-phone-alt text-danger me-2"></i>+91 99798 65551</p>
+                                <p class="m-0"><a href="tel:+919979865551" class="text-dark text-decoration-none"><i class="fa fa-phone-alt text-danger me-2"></i>+91 99798 65551</a></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="bg-light d-flex flex-column justify-content-center p-4 h-100">
                                 <h5 class="text-uppercase">Email Us</h5>
-                                <p class="m-0"><i
-                                        class="fa fa-envelope-open text-danger me-2"></i>theautoshoppers.in@gmail.com
+                                <p class="m-0"><a href="mailto:theautoshoppers.in@gmail.com" class="text-dark text-decoration-none"><i
+                                        class="fa fa-envelope-open text-danger me-2"></i>theautoshoppers.in@gmail.com</a>
                                 </p>
                             </div>
                         </div>

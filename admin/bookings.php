@@ -45,6 +45,7 @@ $bookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC")->fetch
             <a class="nav-link active" href="bookings.php"><i class="fa fa-calendar-check me-2"></i> Bookings</a>
             <a class="nav-link" href="contacts.php"><i class="fa fa-envelope me-2"></i> Contact Messages</a>
             <a class="nav-link" href="newsletter.php"><i class="fa fa-users me-2"></i> Newsletter</a>
+            <a class="nav-link" href="knowledge.php"><i class="fa fa-blog me-2"></i> Car Knowledge</a>
             <hr class="bg-secondary mx-3">
             <a class="nav-link" href="logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
         </nav>
@@ -67,7 +68,6 @@ $bookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC")->fetch
                             <th>Customer</th>
                             <th>Contact</th>
                             <th>Vehicle</th>
-                            <th>Service</th>
                             <th>Schedule</th>
                             <th>Status</th>
                             <th>Actions</th>
@@ -80,8 +80,7 @@ $bookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC")->fetch
                             <td><strong><?php echo $b['name']; ?></strong></td>
                             <td><?php echo $b['phone']; ?><br><small><?php echo $b['email']; ?></small></td>
                             <td><?php echo $b['car_make'] . ' ' . $b['car_model']; ?><br><small><?php echo $b['registration_number']; ?></small></td>
-                            <td><?php echo $b['service_type']; ?></td>
-                            <td><?php echo $b['service_date']; ?><br><small><?php echo $b['service_time']; ?></small></td>
+                            <td><?php echo $b['service_date']; ?></td>
                             <td>
                                 <span class="badge bg-<?php 
                                     echo $b['status'] === 'pending' ? 'warning' : ($b['status'] === 'confirmed' ? 'success' : ($b['status'] === 'completed' ? 'primary' : 'secondary')); 

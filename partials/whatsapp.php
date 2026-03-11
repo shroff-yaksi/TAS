@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/booking-panel.php'; ?>
+
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/919979865551" class="whatsapp-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>

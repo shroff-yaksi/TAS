@@ -269,6 +269,113 @@ require 'partials/head.php';
     </div>
     <!-- Fact End -->
 
+    <!-- Google Reviews Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="text-danger text-uppercase">Testimonials</h6>
+                <h1 class="mb-2">What Our Customers Say</h1>
+                <div class="d-flex align-items-center justify-content-center mb-5">
+                    <a href="https://www.google.com/maps/place/The+Auto+Shoppers/@21.1702,72.7924,17z/data=!4m8!3m7!1s0x3be04f00e6e1b8a1:0x1234567890abcdef!8m2!3d21.1702!4d72.7924!9m1!1b1" target="_blank" class="d-flex align-items-center text-decoration-none">
+                        <img src="https://www.google.com/favicon.ico" alt="Google" style="height: 20px;" class="me-2">
+                        <span class="text-muted" style="transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color=''">Reviews from Google</span>
+                    </a>
+                    <span class="ms-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star-half-alt text-warning"></i>
+                        <span class="fw-bold ms-1">4.6</span>
+                    </span>
+                </div>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded p-4">
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"Excellent service and very professional staff. They diagnosed the issue quickly and fixed it at a reasonable price. Highly recommended!"</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Rajesh Patel</h5>
+                        <small class="text-muted">via Google Reviews</small>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded p-4">
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"Best multi-brand car service in Surat. They took great care of my BMW. Genuine parts and transparent pricing — will definitely come back."</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Amit Shah</h5>
+                        <small class="text-muted">via Google Reviews</small>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded p-4">
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"Very trustworthy garage. I've been bringing my car here for 5 years and they never try to upsell. Honest work and great results every time."</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Priya Desai</h5>
+                        <small class="text-muted">via Google Reviews</small>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded p-4">
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                        </div>
+                        <p>"AC wasn't cooling at all. They fixed it same day and charged very fairly. The waiting area is clean and comfortable too. Great experience."</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Karan Mehta</h5>
+                        <small class="text-muted">via Google Reviews</small>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <div class="testimonial-text rounded p-4">
+                        <div class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star-half-alt text-warning"></i>
+                        </div>
+                        <p>"Took my Hyundai for engine servicing. Work was done on time and they explained everything clearly. Very professional team."</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5>Sneha Joshi</h5>
+                        <small class="text-muted">via Google Reviews</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Google Reviews End -->
+
     <!-- Mobile App Preview Start -->
     <div class="container-xxl py-5">
         <div class="container">

@@ -79,10 +79,6 @@
     $('.date').datetimepicker({
         format: 'L'
     });
-    $('.time').datetimepicker({
-        format: 'LT'
-    });
-
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
@@ -91,7 +87,8 @@
         margin: 25,
         dots: true,
         loop: true,
-        nav: false,
+        nav: true,
+        navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
         responsive: {
             0: {
                 items: 1
@@ -109,30 +106,29 @@
     $(document).ready(function () {
         const darkMode = localStorage.getItem('darkMode');
         
-        // Function to update all toggle icons and mobile label
-        function updateToggleIcons(isDark) {
+        // Function to update toggle icon
+        function updateToggleIcon(isDark) {
             const iconClass = isDark ? 'fa-sun' : 'fa-moon';
             const removeClass = isDark ? 'fa-moon' : 'fa-sun';
-            $('#dark-mode-toggle i, #dark-mode-toggle-mobile i')
+            $('#dark-mode-toggle i')
                 .removeClass(removeClass)
                 .addClass(iconClass);
-            $('#dark-mode-label').text(isDark ? 'Light Mode' : 'Dark Mode');
         }
-        
+
         // Default to light mode if not set
         if (darkMode === 'enabled') {
             $('body').addClass('dark-mode');
-            updateToggleIcons(true);
+            updateToggleIcon(true);
         } else if (darkMode === null) {
             localStorage.setItem('darkMode', 'disabled');
         }
 
-        // Handle clicks on both desktop and mobile toggle buttons
-        $('#dark-mode-toggle, #dark-mode-toggle-mobile').click(function () {
+        // Handle click on floating toggle button
+        $('#dark-mode-toggle').click(function () {
             $('body').toggleClass('dark-mode');
             const isDark = $('body').hasClass('dark-mode');
             localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-            updateToggleIcons(isDark);
+            updateToggleIcon(isDark);
         });
     });
 

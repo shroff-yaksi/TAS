@@ -45,6 +45,7 @@ $recentBookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC LI
             <a class="nav-link" href="bookings.php"><i class="fa fa-calendar-check me-2"></i> Bookings</a>
             <a class="nav-link" href="contacts.php"><i class="fa fa-envelope me-2"></i> Contact Messages</a>
             <a class="nav-link" href="newsletter.php"><i class="fa fa-users me-2"></i> Newsletter</a>
+            <a class="nav-link" href="knowledge.php"><i class="fa fa-blog me-2"></i> Car Knowledge</a>
             <hr class="bg-secondary mx-3">
             <a class="nav-link" href="logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
         </nav>
@@ -111,8 +112,8 @@ $recentBookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC LI
                         <tr>
                             <th>ID</th>
                             <th>Customer</th>
-                            <th>Service</th>
-                            <th>Date & Time</th>
+                            <th>Vehicle</th>
+                            <th>Date</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -122,8 +123,8 @@ $recentBookings = $db->query("SELECT * FROM bookings ORDER BY created_at DESC LI
                         <tr>
                             <td><?php echo $b['booking_id']; ?></td>
                             <td><?php echo $b['name']; ?></td>
-                            <td><?php echo $b['service_type']; ?></td>
-                            <td><?php echo $b['service_date'] . ' ' . $b['service_time']; ?></td>
+                            <td><?php echo $b['car_make'] . ' ' . $b['car_model']; ?></td>
+                            <td><?php echo $b['service_date']; ?></td>
                             <td>
                                 <span class="badge bg-<?php 
                                     echo $b['status'] === 'pending' ? 'warning' : ($b['status'] === 'confirmed' ? 'success' : 'secondary'); 

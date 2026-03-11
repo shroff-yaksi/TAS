@@ -15,7 +15,8 @@
                 style="font-family: 'Times New Roman', Times, serif; font-weight: 700; letter-spacing: 0.5px;">
                 <img src="img/tas_logo_light_theme.png" alt="TAS Logo" class="logo-light" style="max-height: 36px;">
                 <img src="img/tas_logo_dark_theme.png" alt="TAS Logo" class="logo-dark" style="max-height: 36px;">
-                <span class="navbar-brand-text">THE AUTO SHOPPERS</span>
+                <span class="navbar-brand-text d-none d-lg-inline">THE AUTO SHOPPERS</span>
+                <span class="navbar-brand-text d-inline d-lg-none">TAS</span>
             </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -23,36 +24,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.php" class="nav-item nav-link <?= $currentPage === 'index.php' ? 'active' : '' ?>">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle <?= in_array($currentPage, ['about.php','team.php']) ? 'active' : '' ?>" data-bs-toggle="dropdown">About</a>
-                    <div class="dropdown-menu rounded-0 m-0">
-                        <a href="about.php" class="dropdown-item">About Us</a>
-                        <a href="team.php" class="dropdown-item">Our Team</a>
-                    </div>
-                </div>
+                <a href="about.php" class="nav-item nav-link <?= $currentPage === 'about.php' ? 'active' : '' ?>">About Us</a>
                 <a href="service.php" class="nav-item nav-link <?= $currentPage === 'service.php' ? 'active' : '' ?>">Services</a>
                 <a href="offers.php" class="nav-item nav-link <?= $currentPage === 'offers.php' ? 'active' : '' ?>">Offers</a>
-                <a href="contact.php" class="nav-item nav-link <?= $currentPage === 'contact.php' ? 'active' : '' ?>">Contact</a>
+                <a href="gallery.php" class="nav-item nav-link <?= $currentPage === 'gallery.php' ? 'active' : '' ?>">Gallery</a>
+                <a href="knowledge.php" class="nav-item nav-link <?= $currentPage === 'knowledge.php' ? 'active' : '' ?>">Car Knowledge</a>
                 <!-- Mobile-only items -->
                 <div class="d-lg-none mt-3 mb-2 px-2">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <span id="dark-mode-label" class="text-muted">Dark Mode</span>
-                        <button id="dark-mode-toggle-mobile" class="btn btn-sm btn-outline-secondary rounded-circle"
-                            style="width: 40px; height: 40px; padding: 0;">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </div>
                     <a href="booking.php"
                         class="btn btn-danger w-100 rounded-0 shadow-sm hover-lift d-flex align-items-center justify-content-center py-3">Book
                         Service<i class="fa fa-arrow-right ms-2 btn-icon-animate"></i></a>
                 </div>
-            </div>
-            <div class="d-none d-lg-flex align-items-center me-4">
-                <button id="dark-mode-toggle" class="btn btn-sm btn-outline-secondary rounded-circle"
-                    style="width: 40px; height: 40px; padding: 0;">
-                    <i class="fas fa-moon"></i>
-                </button>
             </div>
         </div>
         <a href="booking.php"

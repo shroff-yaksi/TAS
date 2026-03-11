@@ -27,14 +27,19 @@ $carModel = sanitizeInput($_POST['carModel'] ?? '');
 $carYear = sanitizeInput($_POST['carYear'] ?? '');
 $regNo = sanitizeInput($_POST['registrationNumber'] ?? '');
 $mileage = sanitizeInput($_POST['mileage'] ?? '');
-$serviceType = sanitizeInput($_POST['serviceType'] ?? '');
+$serviceType = '';
 $serviceDate = sanitizeInput($_POST['serviceDate'] ?? '');
-$serviceTime = sanitizeInput($_POST['serviceTime'] ?? '');
+// Build preferred time from dropdowns if provided
+$prefHour = sanitizeInput($_POST['prefHour'] ?? '');
+$prefMin = sanitizeInput($_POST['prefMin'] ?? '');
+$prefAmpm = sanitizeInput($_POST['prefAmpm'] ?? '');
+$serviceTime = (!empty($prefHour) && !empty($prefMin)) ? "$prefHour:$prefMin $prefAmpm" : '';
+$vehiclePickup = sanitizeInput($_POST['vehiclePickup'] ?? '');
 $urgency = sanitizeInput($_POST['urgency'] ?? 'Normal');
 $message = sanitizeInput($_POST['message'] ?? '');
 
 // Validation
-if (empty($name) || empty($email) || empty($phone) || empty($carMake) || empty($carModel) || empty($serviceType) || empty($serviceDate)) {
+if (empty($name) || empty($email) || empty($phone) || empty($carMake) || empty($carModel) || empty($serviceDate)) {
     echo json_encode(['success' => false, 'message' => 'Please fill all required fields.']);
     exit;
 }
@@ -80,9 +85,9 @@ try {
     <div class='details-box'>
         <h3>Booking Summary</h3>
         <div class='detail-row'><span class='detail-label'>Booking ID:</span> $bookingId</div>
-        <div class='detail-row'><span class='detail-label'>Service:</span> $serviceType</div>
-        <div class='detail-row'><span class='detail-label'>Date:</span> $serviceDate</div>
-        <div class='detail-row'><span class='detail-label'>Time:</span> $serviceTime</div>
+        <div class='detail-row'><span class='detail-label'>Date:</span> $serviceDate</div>" .
+        (!empty($serviceTime) ? "<div class='detail-row'><span class='detail-label'>Preferred Time:</span> $serviceTime</div>" : "") .
+        (!empty($vehiclePickup) ? "<div class='detail-row'><span class='detail-label'>Vehicle Pickup:</span> $vehiclePickup</div>" : "") . "
     </div>
     
     <div class='details-box'>
@@ -105,8 +110,8 @@ try {
             <div class='detail-row'><span class='detail-label'>Phone:</span> $phone</div>
             <div class='detail-row'><span class='detail-label'>Email:</span> $email</div>
             <div class='detail-row'><span class='detail-label'>Vehicle:</span> $carYear $carMake $carModel ($regNo)</div>
-            <div class='detail-row'><span class='detail-label'>Service:</span> $serviceType</div>
-            <div class='detail-row'><span class='detail-label'>Requested:</span> $serviceDate at $serviceTime</div>
+            <div class='detail-row'><span class='detail-label'>Requested:</span> $serviceDate" . (!empty($serviceTime) ? " at $serviceTime" : "") . "</div>" .
+            (!empty($vehiclePickup) ? "<div class='detail-row'><span class='detail-label'>Vehicle Pickup:</span> $vehiclePickup</div>" : "") . "
         </div>
     ");
     sendEmail(ADMIN_EMAIL, "New Booking - $bookingId ($name)", $adminMail, $email);

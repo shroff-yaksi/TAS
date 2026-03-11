@@ -33,6 +33,7 @@ $contacts = $db->query("SELECT * FROM contacts ORDER BY created_at DESC")->fetch
             <a class="nav-link" href="bookings.php"><i class="fa fa-calendar-check me-2"></i> Bookings</a>
             <a class="nav-link active" href="contacts.php"><i class="fa fa-envelope me-2"></i> Contact Messages</a>
             <a class="nav-link" href="newsletter.php"><i class="fa fa-users me-2"></i> Newsletter</a>
+            <a class="nav-link" href="knowledge.php"><i class="fa fa-blog me-2"></i> Car Knowledge</a>
             <hr class="bg-secondary mx-3">
             <a class="nav-link" href="logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
         </nav>

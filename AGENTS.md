@@ -1,5 +1,10 @@
 # AGENTS.md - TAS (The Auto Shoppers)
 
+## MANDATORY: Use td for Task Management
+
+You must run td usage --new-session at conversation start (or after /clear) to see current work.
+Use td usage -q for subsequent reads.
+
 ## Project Overview
 
 TAS is a multi-page PHP website for a car servicing and detailing business using server-rendered HTML with PHP/SQLite backend. No build tools or package managers needed.

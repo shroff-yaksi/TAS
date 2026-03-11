@@ -29,6 +29,8 @@
 .footer .btn.btn-link {
     padding-left: 0 !important;
     text-align: left;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* Invert phone icon */
@@ -428,12 +430,12 @@ h6 {
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--secondary);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0;
-    padding: 24px 10px;
-    margin: 0 1px;
+    letter-spacing: 0.5px;
+    padding: 24px 16px;
+    margin: 0 3px;
     transition: all 0.3s ease;
 }
 
@@ -447,14 +449,14 @@ h6 {
 @media (max-width: 1200px) {
     .navbar-light .navbar-nav .nav-link {
         padding: 24px 6px;
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 1100px) {
     .navbar-light .navbar-nav .nav-link {
         padding: 24px 5px;
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
@@ -702,6 +704,434 @@ body.dark-mode .navbar .dropdown-item:hover {
     color: var(--gray);
 }
 
+/* Service Page - Sticky Booking Sidebar */
+.service-booking-sidebar {
+    position: sticky;
+    top: 80px;
+    background: linear-gradient(135deg, #B71C1C 0%, #8B0000 100%);
+    border-radius: 8px;
+    padding: 32px 24px;
+    box-shadow: 0 12px 40px rgba(183, 28, 28, 0.3);
+    animation: sidebarSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+@keyframes sidebarSlideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.service-booking-sidebar .sidebar-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.service-booking-sidebar .sidebar-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 24px;
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+}
+
+/* Pulsing glow on the icon */
+.sidebar-icon-pulse {
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+    50% { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+}
+
+.service-booking-sidebar .sidebar-header h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.service-booking-sidebar .sidebar-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* Staggered field entrance */
+.sidebar-field {
+    animation: fieldFadeIn 0.4s ease forwards;
+    animation-delay: var(--field-delay, 0s);
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+@keyframes fieldFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sidebar-input {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+}
+
+.sidebar-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.sidebar-input:focus {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transform: scale(1.02);
+}
+
+.btn-book-sidebar {
+    background: #ffffff !important;
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    padding: 14px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-book-sidebar:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Shimmer effect on button */
+.btn-book-sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(183, 28, 28, 0.08), transparent);
+    animation: btnShimmer 3s ease-in-out infinite;
+}
+
+@keyframes btnShimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* Sidebar divider & labels */
+/* Booking page glass card */
+.booking-glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .booking-glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Booking page section dividers (light background) */
+.booking-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.booking-divider::before,
+.booking-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.booking-divider span {
+    color: var(--primary);
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.sidebar-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.sidebar-divider::before,
+.sidebar-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.sidebar-divider span {
+    color: #ffffff;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.sidebar-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.sidebar-input option {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.sidebar-emergency {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.sidebar-emergency a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: letter-spacing 0.2s ease;
+}
+
+.sidebar-emergency a:hover {
+    letter-spacing: 1px;
+}
+
+.service-booking-sidebar .alert-success {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.service-booking-sidebar .alert-danger {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* On mobile, sidebar unsticks and flows naturally below services */
+@media (max-width: 991.98px) {
+    .service-booking-sidebar {
+        position: static;
+        margin-top: 1rem;
+    }
+}
+
+/* Gallery Section */
+.gallery-item {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.gallery-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.gallery-img {
+    height: 240px;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 20px;
+    background-color: var(--white);
+}
+
+.gallery-caption h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 8px;
+}
+
+.gallery-caption p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+body.dark-mode .gallery-item {
+    border-color: var(--border);
+}
+
+body.dark-mode .gallery-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+body.dark-mode .gallery-caption {
+    background-color: var(--light);
+}
+
+body.dark-mode .gallery-caption h5 {
+    color: #ffffff;
+}
+
+/* Knowledge / Blog Cards */
+.knowledge-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.knowledge-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.knowledge-card-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--light);
+}
+
+.knowledge-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.knowledge-card:hover .knowledge-card-img img {
+    transform: scale(1.05);
+}
+
+.knowledge-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light);
+}
+
+.knowledge-card-video-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--primary);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.knowledge-card-body {
+    padding: 20px 20px 10px;
+}
+
+.knowledge-card-body h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary);
+    line-height: 1.4;
+}
+
+.knowledge-card-body p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.knowledge-card-footer {
+    padding: 0 20px 20px;
+    font-size: 14px;
+}
+
+.knowledge-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--dark);
+}
+
+body.dark-mode .knowledge-card {
+    background: var(--glass);
+    border-color: var(--border);
+}
+
+body.dark-mode .knowledge-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+body.dark-mode .knowledge-card-body h5 {
+    color: #ffffff;
+}
+
+body.dark-mode .knowledge-card-placeholder {
+    background-color: #1a1a1f;
+}
+
 /* Testimonials - Subtle & Professional */
 .testimonial-item {
     padding: 20px;
@@ -719,6 +1149,38 @@ body.dark-mode .navbar .dropdown-item:hover {
     border-left-color: var(--primary-dark);
 }
 
+.testimonial-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.testimonial-carousel .owl-nav button[class*="owl-"] {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    background: transparent !important;
+    color: var(--primary) !important;
+    font-size: 16px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary) !important;
+    outline: none;
+}
+
+.testimonial-carousel .owl-nav button[class*="owl-"] span {
+    display: none;
+}
+
+.testimonial-carousel .owl-nav button[class*="owl-"]:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
 /* Footer - Professional Dark */
 .footer {
     background-color: var(--secondary);
@@ -733,13 +1195,29 @@ body.dark-mode .navbar .dropdown-item:hover {
 }
 
 .footer p,
-.footer a {
+.footer a:not(.btn) {
     font-size: 14px;
     color: #CCCCCC;
 }
 
 .footer .btn.btn-link:hover {
     color: var(--primary);
+}
+
+.footer a:not(.btn-danger):hover,
+.footer .footer-link:hover,
+.footer .btn-social:hover {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.footer .btn-danger:hover {
+    background-color: var(--primary-dark) !important;
+    color: #ffffff !important;
+}
+
+.footer .footer-link {
+    cursor: pointer;
 }
 
 /* Page Header - Clean */
@@ -799,6 +1277,47 @@ body.dark-mode .navbar .dropdown-item:hover {
 .spinner-border {
     border-color: var(--primary);
     border-right-color: transparent;
+}
+
+/* Floating Dark Mode Toggle */
+.dark-mode-float {
+    position: fixed;
+    bottom: 90px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .dark-mode-float {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+@media (max-width: 576px) {
+    .dark-mode-float {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        bottom: 72px;
+        left: 16px;
+    }
 }
 
 /* Back to Top Button */
@@ -1182,13 +1701,6 @@ body.dark-mode .brand-card.logo-dark-brand:hover img {
     }
 }
 
-/* Navbar brand text — hide on very small screens (≤400px) to prevent overflow */
-@media (max-width: 400px) {
-    .navbar-brand-text {
-        display: none;
-    }
-}
-
 /* Carousel — cap height on mobile so it doesn't dominate the viewport */
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
@@ -1411,5 +1923,43 @@ body.dark-mode .brand-card.logo-dark-brand:hover img {
 @media (max-width: 768px) {
     .container-fluid.p-0.mb-5 {
         margin-bottom: 0 !important;
+    }
+}
+
+/* =============================================
+   TESTIMONIAL NAV — smaller on mobile
+   ============================================= */
+@media (max-width: 576px) {
+    .testimonial-carousel .owl-nav button[class*="owl-"] {
+        width: 36px;
+        height: 36px;
+        font-size: 14px !important;
+    }
+}
+
+/* =============================================
+   BOOKING PANEL — full width on smaller phones
+   ============================================= */
+@media (max-width: 576px) {
+    .booking-panel {
+        width: 100%;
+    }
+}
+
+/* =============================================
+   BOOKING GLASS CARD — reduce padding on mobile
+   ============================================= */
+@media (max-width: 576px) {
+    .booking-glass-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* =============================================
+   FOOTER — reduce row gap on mobile
+   ============================================= */
+@media (max-width: 576px) {
+    .footer .row.g-5 {
+        --bs-gutter-y: 2rem;
     }
 }
