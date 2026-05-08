@@ -1132,6 +1132,34 @@ body.dark-mode .knowledge-card-placeholder {
     background-color: #1a1a1f;
 }
 
+/* Knowledge Page Media Showcase */
+.media-video-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #000;
+    transition: all 0.3s ease;
+    aspect-ratio: 16 / 9;
+}
+
+.media-video-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.media-video-card video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    background: #000;
+}
+
+body.dark-mode .media-video-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
 /* Testimonials - Subtle & Professional */
 .testimonial-item {
     padding: 20px;

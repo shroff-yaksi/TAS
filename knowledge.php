@@ -91,6 +91,36 @@ if (!isset($article)) {
                 <h1 class="mb-5">Tips, Insights & Expert Advice</h1>
             </div>
 
+            <!-- Workshop Showcase: Videos -->
+            <?php
+            $videos = glob('img/knowledge/videos/*.mp4');
+            sort($videos);
+            ?>
+            <?php if (!empty($videos)): ?>
+                <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-danger text-uppercase">Workshop in Action</h6>
+                    <h2 class="mb-4">See Our Team at Work</h2>
+                    <p class="text-muted mb-5 mx-auto" style="max-width: 700px;">Behind-the-scenes footage from our service bays — diagnostics, detailing, and the craftsmanship that goes into every vehicle we touch.</p>
+                </div>
+                <div class="row g-4 mb-5">
+                    <?php foreach ($videos as $i => $v): ?>
+                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="<?php echo 0.1 + ($i % 2) * 0.1; ?>s">
+                            <div class="media-video-card">
+                                <video controls preload="metadata" playsinline>
+                                    <source src="<?php echo htmlspecialchars($v); ?>" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="text-center mt-5 pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-danger text-uppercase">Articles</h6>
+                    <h2 class="mb-4">Read Our Latest Tips</h2>
+                </div>
+            <?php endif; ?>
+
             <?php if (empty($articles)): ?>
                 <div class="text-center py-5">
                     <i class="fa fa-book-open fa-3x text-muted mb-3"></i>
